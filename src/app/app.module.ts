@@ -18,11 +18,18 @@ import { ContactModalPage } from '../pages/contact-modal/contact-modal';
 import { MainPage } from '../pages/main/main';
 import { PortfolioPage } from '../pages/portfolio/portfolio';
 
+
+import { StreetartzProvider } from '../providers/streetartz/streetartz';
+
+
+
+
 @NgModule({
   declarations: [
     MyApp,
     SplashPage,
     ListPage,
+
     CategoryPage,
     GalleryPage,
     LoginPage,
@@ -30,8 +37,9 @@ import { PortfolioPage } from '../pages/portfolio/portfolio';
     SignupPage,
     ContactModalPage,
     MainPage,
-    PortfolioPage
-
+    PortfolioPage,
+    LoginPage,
+    SignupPage
   ],
   imports: [
     BrowserModule,
@@ -49,12 +57,16 @@ import { PortfolioPage } from '../pages/portfolio/portfolio';
     SignupPage,
     ContactModalPage,
     MainPage,
-    PortfolioPage
+    PortfolioPage,
+    LoginPage,
+    SignupPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    StreetartzProvider,
+    
   ]
 })
 export class AppModule {}
