@@ -26,7 +26,7 @@ export class SplashPage {
 
   nextpage(){
   let timer = setInterval(()=>{
-    this.navCtrl.push(CategoryPage);
+    this.navCtrl.setRoot(CategoryPage);
     clearInterval(timer)
   },3000)
   }
