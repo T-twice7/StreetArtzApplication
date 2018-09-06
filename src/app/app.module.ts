@@ -9,12 +9,20 @@ import { ListPage } from '../pages/list/list';
 import { SplashPage } from '../pages/splash/splash';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { LoginPage } from '../pages/login/login';
+import { SignupPage } from '../pages/signup/signup';
+import { StreetartzProvider } from '../providers/streetartz/streetartz';
+
+
+
 
 @NgModule({
   declarations: [
     MyApp,
     SplashPage,
-    ListPage
+    ListPage,
+    LoginPage,
+    SignupPage
   ],
   imports: [
     BrowserModule,
@@ -24,12 +32,16 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   entryComponents: [
     MyApp,
     SplashPage,
-    ListPage
+    ListPage,
+    LoginPage,
+    SignupPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    StreetartzProvider,
+    
   ]
 })
 export class AppModule {}
