@@ -1,7 +1,12 @@
 page-splash {
+    p{
+        color: white;
+    }
     .body{
-        background: linear-gradient(#00cfee, #00e5c3ab);
+        background: linear-gradient(#00cfee, #00e5c3ab), url('../../assets/imgs/BG.jpg');
         height: 100%; 
+        background-size: cover; 
+        background-position: center;
     }
     .logo{
         width: 100%;
@@ -12,5 +17,6 @@ page-splash {
     .theLogo{
         text-align: center;
     }
+
 
 }
