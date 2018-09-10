@@ -20,7 +20,11 @@ import { PortfolioPage } from '../pages/portfolio/portfolio';
 
 
 import { StreetartzProvider } from '../providers/streetartz/streetartz';
+
 import { HttpClientModule } from '@angular/common/http';
+
+=======
+import { AutohideDirective } from '../directives/autohide/autohide'
 
 
 
@@ -31,7 +35,7 @@ import { HttpClientModule } from '@angular/common/http';
     MyApp,
     SplashPage,
     ListPage,
-
+    AutohideDirective,
     CategoryPage,
     GalleryPage,
     LoginPage,
