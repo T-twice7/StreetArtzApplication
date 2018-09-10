@@ -2,9 +2,11 @@ page-category {
     .theInput{
         width: 90%;
     }
-    ion-col{
-        border: 2px solid black
+    ion-header,ion-navbar{
+        background: red;
     }
+
+
     .textField{
 
         border-top: 1px solid rgb(103,156,254);
@@ -13,9 +15,37 @@ page-category {
     }
 
     .slant{
+        
         width: 0px;
         height: 0px;
-        border-bottom: 50px solid rgba(0, 0, 255, 0);
-        border-left: 100vw solid rgb(248,248,248);
+        border-bottom: 80px solid rgba(0, 0, 255, 0);
+        border-left: 100vw solid rgb(77, 139, 255);
     }
+    ion-grid{
+        max-width: 850px;
+        text-align: center; 
+    }
+
+    @media screen and (max-width: 359px) {
+        @media screen and (min-width: 319px){
+            img{
+                height: 90px;
+                width: 90px;
+            }
+            #scroll-content{
+                margin-top: -50px;
+            }
+        }
+    }
+    @media screen and (max-width: 414px) {
+        @media screen and (min-width: 360px){
+            img{
+                height: 100px;
+                width: 120px;
+            }
+        }
+    }
+    @media screen and (max-width: 768px) {
+    }
+    
 }
