@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { LoginPage } from '../../pages/login/login';
-
+import { obj } from '../../class';
 declare var firebase;
 
 /*
@@ -13,19 +13,32 @@ declare var firebase;
 @Injectable()
 export class StreetartzProvider {
 
-
+  obj = {} as obj;
 
   constructor(public http: HttpClient) {
     console.log('Hello StreetartzProvider Provider');
   }
-  login(){
-//
-// firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
-//   // Handle Errors here.
-//   var errorCode = error.code;
-//   var errorMessage = error.message;
-//   // ...
-// });
+  login(email , password){
+
+    //firebase.auth().signInWithEmail()
+    return new Promise((resolve, reject)=>{
+      firebase.auth().signInWithEmailAndPassword(email , password).then(()=>{
+        
+        resolve()
+       
+      }, Error =>{
+        alert(Error)
+      
+      }) ;
+    }
+  )
+  }
+  logout(){
+    firebase.auth().signOut().then(function() {
+      // Sign-out successful.
+    }).catch(function(error) {
+      // An error happened.
+    });
 
   }
   }

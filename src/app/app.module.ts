@@ -20,6 +20,8 @@ import { PortfolioPage } from '../pages/portfolio/portfolio';
 
 
 import { StreetartzProvider } from '../providers/streetartz/streetartz';
+import { HttpClientModule } from '@angular/common/http';
+
 
 
 
@@ -42,7 +44,7 @@ import { StreetartzProvider } from '../providers/streetartz/streetartz';
     SignupPage
   ],
   imports: [
-    BrowserModule,
+    BrowserModule, HttpClientModule ,
     IonicModule.forRoot(MyApp),
   ],
   bootstrap: [IonicApp],
