@@ -9,8 +9,16 @@ import { ListPage } from '../pages/list/list';
 import { SplashPage } from '../pages/splash/splash';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { CategoryPage } from '../pages/category/category';
+import { GalleryPage } from '../pages/gallery/gallery';
 import { LoginPage } from '../pages/login/login';
+import { ProfilePage } from '../pages/profile/profile';
 import { SignupPage } from '../pages/signup/signup';
+import { ContactModalPage } from '../pages/contact-modal/contact-modal';
+import { MainPage } from '../pages/main/main';
+import { PortfolioPage } from '../pages/portfolio/portfolio';
+
+
 import { StreetartzProvider } from '../providers/streetartz/streetartz';
 
 
@@ -21,6 +29,15 @@ import { StreetartzProvider } from '../providers/streetartz/streetartz';
     MyApp,
     SplashPage,
     ListPage,
+
+    CategoryPage,
+    GalleryPage,
+    LoginPage,
+    ProfilePage,
+    SignupPage,
+    ContactModalPage,
+    MainPage,
+    PortfolioPage,
     LoginPage,
     SignupPage
   ],
@@ -33,6 +50,14 @@ import { StreetartzProvider } from '../providers/streetartz/streetartz';
     MyApp,
     SplashPage,
     ListPage,
+    CategoryPage,
+    GalleryPage,
+    LoginPage,
+    ProfilePage,
+    SignupPage,
+    ContactModalPage,
+    MainPage,
+    PortfolioPage,
     LoginPage,
     SignupPage
   ],

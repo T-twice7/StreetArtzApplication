@@ -1,3 +1,22 @@
 page-splash {
+    p{
+        color: white;
+    }
+    .body{
+        background: linear-gradient(#00cfee, #00e5c3ab), url('../../assets/imgs/BG.jpg');
+        height: 100%; 
+        background-size: cover; 
+        background-position: center;
+    }
+    .logo{
+        width: 100%;
+        max-width: 250px;
+        align-content: center;
+        margin-top: 50%
+    }
+    .theLogo{
+        text-align: center;
+    }
+
 
 }
