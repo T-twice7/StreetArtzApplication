@@ -3,25 +3,21 @@
   <ion-list>
     <ion-item>
       <ion-label stacked>Full name</ion-label>
-      <ion-input type="text"></ion-input>
+      <ion-input type="text" [(ngModel)]="obj.name"></ion-input>
     </ion-item>
     <ion-item>
       <ion-label stacked>Email</ion-label>
-      <ion-input type="password"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label stacked>Confirm Email</ion-label>
-      <ion-input type="password"></ion-input>
+      <ion-input type="email" [(ngModel)]="obj.email"></ion-input>
     </ion-item>
     <ion-item>
       <ion-label stacked>Password</ion-label>
-      <ion-input type="password"></ion-input>
+      <ion-input type="password" [(ngModel)]="obj.password"></ion-input>
     </ion-item>
     <ion-item>
       <ion-label stacked>Confirm Password</ion-label>
-      <ion-input type="password"></ion-input>
+      <ion-input type="password" [(ngModel)]="obj.confirmPassword"></ion-input>
     </ion-item>
   </ion-list>
 
-  <button ion-button>SignUp</button>
+  <button ion-button (click)="signUp()" >SignUp</button>
 </ion-content>
