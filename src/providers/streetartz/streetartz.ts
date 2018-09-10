@@ -15,5 +15,8 @@ export class StreetartzProvider {
   constructor(public http: HttpClient) {
     console.log('Hello StreetartzProvider Provider');
   }
+  login(){
 
-}
+  }
+  }
+
