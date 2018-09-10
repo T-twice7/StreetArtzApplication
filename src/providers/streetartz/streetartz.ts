@@ -14,13 +14,14 @@ export class StreetartzProvider {
   }
 
 
-  register(obj: obj) {
-    if (obj.email != obj.confirmEmail || obj.password != obj.confirmPassword) {
-      
-      this.presentToast1();
-    }
-      return firebase.auth().createUserWithEmailAndPassword(obj.email, obj.password); 
-  }
+  // register(obj: obj) {
+  //   if (obj.password != obj.confirmPassword) {
+  //     this.presentToast1();
+  //   }
+  //     return firebase.auth().createUserWithEmailAndPassword(obj.email, obj.password); 
+ 
+
+  // }
   presentToast1() {
     const toast = this.toastCtrl.create({
       message: 'email or password doesnot match!',
@@ -28,5 +29,22 @@ export class StreetartzProvider {
     });
     toast.present();
   }
+  register(obj: obj) {
+    if ( obj.password != obj.confirmPassword) {
+      // this.messege = 'email or password doesnot match!';
+      this.presentToast1();
+    } else {
  
+      return firebase.auth().createUserWithEmailAndPassword(obj.email, obj.password).then((newUser) => {
+        firebase.auth().signInWithEmailAndPassword(obj.email,obj.password).then((authenticatedUser) => {
+          var user = firebase.auth().currentUser
+          firebase.database().ref("profiles/" + user.uid).set(obj);
+          // this.navCtrl.setRoot(MainPage);
+ 
+      })
+ 
+    })
+    }
+ 
+  } 
 }
