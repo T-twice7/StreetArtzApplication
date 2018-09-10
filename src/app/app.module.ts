@@ -23,7 +23,7 @@ import { StreetartzProvider } from '../providers/streetartz/streetartz';
 
 import { HttpClientModule } from '@angular/common/http';
 
-=======
+
 import { AutohideDirective } from '../directives/autohide/autohide'
 
 

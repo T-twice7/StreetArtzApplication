@@ -17,7 +17,7 @@ export class MyApp {
 
   rootPage: any = LoginPage;
 
-  rootPage: any = SplashPage;
+
 
 
   pages: Array<{title: string, component: any}>;

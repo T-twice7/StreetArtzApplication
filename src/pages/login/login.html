@@ -6,7 +6,6 @@
 -->
 <ion-header>
 
-
   <ion-navbar>
     <ion-title>Login</ion-title>
   </ion-navbar>
@@ -14,29 +13,28 @@
 </ion-header>
 
 
-  <ion-navbar>
-    <ion-title>Login</ion-title>
-  </ion-navbar>
+<ion-content padding>
+  <ion-list>
+    <ion-item>
+      <ion-label fixed>
+        <ion-icon ios="ios-person-outline" md="md-person" id="space"></ion-icon> Username</ion-label>
+      <ion-input type="email" value="" [(ngModel)]="obj.email"></ion-input>
+      <ion-input type="email" value="" [(ngModel)]="obj.email"></ion-input>
 
-</ion-header>
+    </ion-item>
 
+    <ion-item>
+      <ion-label fixed>
+        <ion-icon ios="ios-key-outline" md="md-key" id="space"></ion-icon> Password</ion-label>
+      <ion-input type="password" [(ngModel)]="obj.password"></ion-input>
+    </ion-item>
+  </ion-list>
 
-<ion-content padding>   
-    <ion-list >
-        <ion-item >
-            <ion-label fixed ><ion-icon ios="ios-person-outline" md="md-person"  id="space"></ion-icon>  Username</ion-label>
-        <ion-input type="email" value="" [(ngModel)]="obj.email" ></ion-input>
-            <ion-input type="email" value="" [(ngModel)]="obj.email"></ion-input>
-
-          </ion-item>
-        
-          <ion-item >
-            <ion-label fixed ><ion-icon ios="ios-key-outline" md="md-key"  id="space"></ion-icon>  Password</ion-label>
-            <ion-input type="password" [(ngModel)]="obj.password"></ion-input>
-          </ion-item>
-    </ion-list>
-
-    <button ion-button round   (click)="login(obj)"><ion-icon ios="ios-log-in-outline" md="md-log-in"></ion-icon></button>
-    <p  (click)="signup()">Don't have an account?<b> Sign up</b></p>
+  <button ion-button round (click)="login(obj)">
+    <ion-icon ios="ios-log-in-outline" md="md-log-in"></ion-icon>
+  </button>
+  <p (click)="signup()">Don't have an account?
+    <b> Sign up</b>
+  </p>
 
 </ion-content>
