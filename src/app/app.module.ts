@@ -20,7 +20,12 @@ import { PortfolioPage } from '../pages/portfolio/portfolio';
 
 
 import { StreetartzProvider } from '../providers/streetartz/streetartz';
+
+import { HttpClientModule } from '@angular/common/http';
+
+=======
 import { AutohideDirective } from '../directives/autohide/autohide'
+
 
 
 
@@ -43,7 +48,7 @@ import { AutohideDirective } from '../directives/autohide/autohide'
     SignupPage
   ],
   imports: [
-    BrowserModule,
+    BrowserModule, HttpClientModule ,
     IonicModule.forRoot(MyApp),
   ],
   bootstrap: [IonicApp],

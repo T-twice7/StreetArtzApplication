@@ -3,11 +3,18 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { SignupPage } from '../signup/signup';
 import { StreetartzProvider } from '../../providers/streetartz/streetartz';
 
+
+import { ModalController } from 'ionic-angular';
+import { MainPage } from '../main/main';
+import { obj } from '../../class';
+declare var firebase;
+
 import { ModalController,ViewController } from 'ionic-angular';
 import { obj } from '../../class';
 import { LoadingController } from 'ionic-angular';
 
 import { ModalController } from 'ionic-angular';
+
 
 
 
@@ -25,10 +32,23 @@ import { ModalController } from 'ionic-angular';
   selector: 'page-login',
   templateUrl: 'login.html',
 })
+
+
 export class LoginPage {
+
+
+  obj = {} as obj;
+
+  email:any;
+  password:any;
+  constructor(public navCtrl: NavController, public navParams: NavParams,public modalCtrl: ModalController, private arts: StreetartzProvider) {
+    
+  }
+
 
   obj = {} as obj
   constructor(public navCtrl: NavController, public navParams: NavParams,public modalCtrl: ModalController, public viewCtrl: ViewController,public art: StreetartzProvider,public loadingCtrl: LoadingController) {
+
   ionViewDidLoad() {
     console.log('ionViewDidLoad LoginPage');
     
@@ -39,6 +59,23 @@ export class LoginPage {
     const modal = this.modalCtrl.create(SignupPage);
     modal.present();
   }
+
+  login(obj:obj) {
+
+    this.arts.login(this.obj.email , this.obj.password ).then(()=>{
+
+      alert("sucesss")
+    } , (error)=>{
+      alert(error)
+
+    })
+    
+    
+      
+    
+  
+
+
 
   dismiss() {
     this.viewCtrl.dismiss();
@@ -57,4 +94,7 @@ export class LoginPage {
     });
     loader.present();
   }
+
+}
+
 }
