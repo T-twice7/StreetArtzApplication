@@ -1,15 +1,22 @@
-
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { LoginPage } from '../../pages/login/login';
 import { obj } from '../../class';
-import { ToastController } from 'ionic-angular';
 import { AlertController } from 'ionic-angular';
 import { LoadingController } from 'ionic-angular';
+import { ToastController } from 'ionic-angular';
+
 declare var firebase;
+
+/*
+  Generated class for the StreetartzProvider provider.
+
+  See https://angular.io/guide/dependency-injection for more info on providers
+  and Angular DI.
+*/
 @Injectable()
 export class StreetartzProvider {
   obj = {} as obj;
-
   constructor(public toastCtrl: ToastController, public alertCtrl: AlertController, public loadingCtrl: LoadingController) {
     console.log('Hello StreetartzProvider Provider');
   }
@@ -45,7 +52,6 @@ export class StreetartzProvider {
 
       })
     })
-
   }
  login(email , password){
     return new Promise((resolve, reject)=>{

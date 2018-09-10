@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams,ViewController } from 'ionic-angular';
 import { LoginPage } from '../login/login';
 import { StreetartzProvider } from '../../providers/streetartz/streetartz'
 import { obj } from '../../class';
@@ -11,13 +11,16 @@ import { ToastController } from 'ionic-angular';
   templateUrl: 'signup.html',
 })
 export class SignupPage {
-  obj = {} as obj
-  constructor(public navCtrl: NavController, public navParams: NavParams, public art: StreetartzProvider, public toastCtrl: ToastController) {
+  obj = {} as obj;
+  constructor(public navCtrl: NavController, public navParams: NavParams, public art: StreetartzProvider, public toastCtrl: ToastController, public alertCtrl: AlertController) {
+
+
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad SignupPage');
   }
+
   signUp(obj: obj) {
     if (this.obj.password != this.obj.confirmPassword) {
       this.presentToast1();
@@ -29,13 +32,15 @@ export class SignupPage {
   }
       
   }
-  presentToast(){
+  presentToast() {
+
     const toast = this.toastCtrl.create({
       message: 'User registered successfully!',
       duration: 3000
     });
     toast.present();
   }
+
   presentToast1(){
     const toast = this.toastCtrl.create({
       message: 'password doesnot match!',
@@ -43,4 +48,7 @@ export class SignupPage {
     });
     toast.present();
   }
+
+
+
 }
