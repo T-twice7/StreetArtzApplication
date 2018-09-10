@@ -31,7 +31,7 @@ export class LoginPage {
 
   email:any;
   password:any;
-  constructor(public navCtrl: NavController, public navParams: NavParams,public modalCtrl: ModalController, private arts: StreetartzProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,public modalCtrl: ModalController, private art: StreetartzProvider) {
     
   }
 
@@ -47,7 +47,7 @@ export class LoginPage {
   }
   login(obj:obj) {
 
-    this.arts.login(this.obj.email , this.obj.password ).then(()=>{
+    this.art.login(this.obj.email , this.obj.password ).then(()=>{
 
       alert("sucesss")
     } , (error)=>{
