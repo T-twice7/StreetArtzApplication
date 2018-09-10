@@ -20,6 +20,7 @@ import { PortfolioPage } from '../pages/portfolio/portfolio';
 
 
 import { StreetartzProvider } from '../providers/streetartz/streetartz';
+import { AutohideDirective } from '../directives/autohide/autohide'
 
 
 
@@ -29,7 +30,7 @@ import { StreetartzProvider } from '../providers/streetartz/streetartz';
     MyApp,
     SplashPage,
     ListPage,
-
+    AutohideDirective,
     CategoryPage,
     GalleryPage,
     LoginPage,
