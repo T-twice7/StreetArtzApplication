@@ -2,23 +2,20 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { SignupPage } from '../signup/signup';
 import { StreetartzProvider } from '../../providers/streetartz/streetartz';
-
-
-import { ModalController } from 'ionic-angular';
 import { MainPage } from '../main/main';
-import { obj } from '../../class';
-declare var firebase;
+
+
 
 import { ModalController,ViewController } from 'ionic-angular';
 import { obj } from '../../class';
 import { LoadingController } from 'ionic-angular';
 
-import { ModalController } from 'ionic-angular';
 
 
 
 
 
+declare var firebase;
 
 /**
  * Generated class for the LoginPage page.
@@ -37,18 +34,13 @@ import { ModalController } from 'ionic-angular';
 export class LoginPage {
 
 
-  obj = {} as obj;
 
   email:any;
   password:any;
-  constructor(public navCtrl: NavController, public navParams: NavParams,public modalCtrl: ModalController, private art: StreetartzProvider) {
-    
-  }
-
-
+ 
   obj = {} as obj
   constructor(public navCtrl: NavController, public navParams: NavParams,public modalCtrl: ModalController, public viewCtrl: ViewController,public art: StreetartzProvider,public loadingCtrl: LoadingController) {
-
+  }
   ionViewDidLoad() {
     console.log('ionViewDidLoad LoginPage');
     
@@ -59,30 +51,13 @@ export class LoginPage {
     const modal = this.modalCtrl.create(SignupPage);
     modal.present();
   }
-
-  login(obj:obj) {
-
-    this.art.login(this.obj.email , this.obj.password ).then(()=>{
-
-      alert("sucesss")
-    } , (error)=>{
-      alert(error)
-
-    })
-    
-    
-      
-    
-  
-
-
-
   dismiss() {
     this.viewCtrl.dismiss();
   }
   login(obj:obj) {
     this.art.login(this.obj.email,this.obj.password ).then(()=>{
      this.presentLoading();
+     this.navCtrl.setRoot(MainPage)
     } , (error)=>{
       alert(error)
     })
@@ -91,10 +66,17 @@ export class LoginPage {
     const loader = this.loadingCtrl.create({
       content: "signing in....",
       duration: 3000
+     
     });
     loader.present();
   }
 
-}
+  forgotpassword(obj:obj){
+    this.art.forgotpassword(this.obj.email).then(()=>{
+      alert("Check your email")
+    } , (error)=>{
+ 
+    })
+  }
 
 }

@@ -14,11 +14,7 @@
 </ion-header>
 
 
-  <ion-navbar>
-    <ion-title>Login</ion-title>
-  </ion-navbar>
-
-</ion-header>
+ 
 
 
 <ion-content padding>   
@@ -26,7 +22,7 @@
         <ion-item >
             <ion-label fixed ><ion-icon ios="ios-person-outline" md="md-person"  id="space"></ion-icon>  Username</ion-label>
         <ion-input type="email" value="" [(ngModel)]="obj.email" ></ion-input>
-            <ion-input type="email" value="" [(ngModel)]="obj.email"></ion-input>
+            
 
           </ion-item>
         
@@ -38,5 +34,6 @@
 
     <button ion-button round   (click)="login(obj)"><ion-icon ios="ios-log-in-outline" md="md-log-in"></ion-icon></button>
     <p  (click)="signup()">Don't have an account?<b> Sign up</b></p>
+    <p><b (click)="forgotpassword()">Forgor Password</b></p>
 
 </ion-content>

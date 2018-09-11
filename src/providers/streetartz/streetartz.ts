@@ -18,50 +18,25 @@ declare var firebase;
 */
 @Injectable()
 export class StreetartzProvider {
-
-
-  obj = {} as obj;
-
-  constructor(public http: HttpClient) {
-
   obj = {} as obj;
   constructor(public toastCtrl: ToastController, public alertCtrl: AlertController, public loadingCtrl: LoadingController) {
     console.log('Hello StreetartzProvider Provider');
   }
-  login(email , password){
 
-
-    //firebase.auth().signInWithEmail()
-    return new Promise((resolve, reject)=>{
-      firebase.auth().signInWithEmailAndPassword(email , password).then(()=>{
-        
-        resolve()
-       
-      }, Error =>{
-        alert(Error)
-      
-      }) ;
-    }
-  )
-  }
-  logout(){
+logout(){
     firebase.auth().signOut().then(function() {
       // Sign-out successful.
     }).catch(function(error) {
       // An error happened.
-
-  presentToast1() {
+    })
+  }
+  presentToast1(){
     const toast = this.toastCtrl.create({
       message: 'email or password doesnot match!',
       duration: 3000
 
     });
-
   }
-
-  }
-
-
   register(obj: obj) {
     return firebase.auth().createUserWithEmailAndPassword(obj.email,obj.password).then((newUser) => {
       firebase.auth().signInWithEmailAndPassword(obj.email,obj.password).then((authenticatedUser) => {
@@ -97,5 +72,13 @@ export class StreetartzProvider {
       }) ;
     })
   }
+  forgotpassword(email){
+    return new Promise((resolve, reject)=>{
+      firebase.auth().sendPasswordResetEmail(email) ;
+      resolve();
+   
+   })
+   
+   }
 }
 
