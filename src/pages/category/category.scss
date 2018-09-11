@@ -1,6 +1,6 @@
 page-category {
     .theBody{
-        background: skyblue;
+        background: rgb(239, 239, 239);
     }
 
     .slant{
@@ -156,7 +156,7 @@ page-category {
     @media screen and (min-width: 760px){
         @media screen and (max-width: 850px){
             #scroll-content{
-                background: red;
+                // background: red;
                 text-align: center;
                 margin-top: -110px;
             }
