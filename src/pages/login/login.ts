@@ -2,17 +2,14 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { SignupPage } from '../signup/signup';
 import { StreetartzProvider } from '../../providers/streetartz/streetartz';
+import { MainPage } from '../main/main';
 
 import { ModalController,ViewController } from 'ionic-angular';
 import { obj } from '../../class';
 import { LoadingController } from 'ionic-angular';
 
-import { ModalController } from 'ionic-angular';
 
-
-
-
-
+declare var firebase;
 /**
  * Generated class for the LoginPage page.
  *
@@ -25,10 +22,14 @@ import { ModalController } from 'ionic-angular';
   selector: 'page-login',
   templateUrl: 'login.html',
 })
-export class LoginPage {
 
+
+export class LoginPage {
+  email:any;
+  password:any;
   obj = {} as obj
   constructor(public navCtrl: NavController, public navParams: NavParams,public modalCtrl: ModalController, public viewCtrl: ViewController,public art: StreetartzProvider,public loadingCtrl: LoadingController) {
+  }
   ionViewDidLoad() {
     console.log('ionViewDidLoad LoginPage');
     
@@ -39,7 +40,6 @@ export class LoginPage {
     const modal = this.modalCtrl.create(SignupPage);
     modal.present();
   }
-
   dismiss() {
     this.viewCtrl.dismiss();
   }
@@ -57,4 +57,7 @@ export class LoginPage {
     });
     loader.present();
   }
+
+
+
 }
