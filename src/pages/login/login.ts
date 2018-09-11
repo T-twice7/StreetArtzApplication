@@ -5,6 +5,7 @@ import { StreetartzProvider } from '../../providers/streetartz/streetartz';
 import { ModalController,ViewController } from 'ionic-angular';
 import { obj } from '../../class';
 import { LoadingController } from 'ionic-angular';
+import { CategoryPage } from '../category/category';
 /**
  * Generated class for the LoginPage page.
  *
@@ -37,6 +38,7 @@ export class LoginPage {
   login(obj:obj) {
     this.art.login(this.obj.email,this.obj.password ).then(()=>{
      this.presentLoading();
+     this.navCtrl.setRoot(CategoryPage);
     } , (error)=>{
       alert(error)
     })

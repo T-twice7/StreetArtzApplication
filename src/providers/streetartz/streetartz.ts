@@ -9,9 +9,11 @@ declare var firebase;
 @Injectable()
 export class StreetartzProvider {
   obj = {} as obj;
-
+  arr = [];
+  keys =[];
   constructor(public toastCtrl: ToastController, public alertCtrl: AlertController, public loadingCtrl: LoadingController) {
     console.log('Hello StreetartzProvider Provider');
+
   }
 
   presentToast1() {
@@ -42,7 +44,6 @@ export class StreetartzProvider {
         });
         alert.present();
         console.log(error);
-
       })
     })
 
@@ -56,5 +57,29 @@ export class StreetartzProvider {
  
       }) ;
     })
+  }
+
+  profile(obj:obj){
+    return new Promise((pass,fail)=>{
+      var userID = firebase.auth().currentUser;
+      console.log(userID.uid);
+      firebase.database().ref("profiles/" + userID.uid).on('value', (data: any) => {
+        var username = data.val();
+        console.log(username);
+        for (var i = 0; i < this.keys.length; i++) {
+          var k = this.keys[i];
+         
+          let object = {
+            key: k
+          }
+          this.keys.push(k);
+          this.arr.push(object);
+    
+        }
+      });
+    })
+
+     
+    
   }
 }

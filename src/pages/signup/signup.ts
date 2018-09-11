@@ -43,4 +43,10 @@ export class SignupPage {
     });
     toast.present();
   }
+
+  profile(){
+   this.art.profile(this.obj).then((data)=>{
+   console.log(data);
+   })
+  }
 }
