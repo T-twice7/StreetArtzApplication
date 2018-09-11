@@ -11,7 +11,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { CategoryPage } from '../pages/category/category';
 import { GalleryPage } from '../pages/gallery/gallery';
-import { LoginPage } from '../pages/login/login';
+
 import { ProfilePage } from '../pages/profile/profile';
 import { SignupPage } from '../pages/signup/signup';
 import { ContactModalPage } from '../pages/contact-modal/contact-modal';
@@ -20,6 +20,7 @@ import { PortfolioPage } from '../pages/portfolio/portfolio';
 
 
 import { StreetartzProvider } from '../providers/streetartz/streetartz';
+import { LoginPage } from '../pages/login/login';
 
 
 
@@ -29,7 +30,6 @@ import { StreetartzProvider } from '../providers/streetartz/streetartz';
     MyApp,
     SplashPage,
     ListPage,
-
     CategoryPage,
     GalleryPage,
     LoginPage,

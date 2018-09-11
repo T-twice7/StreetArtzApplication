@@ -31,7 +31,8 @@ export class LoginPage {
     const modal = this.modalCtrl.create(SignupPage);
     modal.present();
   }
-  dismiss() {
+  close(){
     this.viewCtrl.dismiss();
-  }
+  };
+
 }
