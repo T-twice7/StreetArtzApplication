@@ -21,7 +21,7 @@ import { GalleryPage } from '../pages/gallery/gallery';
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = CategoryPage;
+  rootPage: any = SplashPage;
 
   pages: Array<{title: string, component: any}>;
 
