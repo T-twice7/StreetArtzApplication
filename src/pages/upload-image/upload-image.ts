@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { MainPage } from '../main/main';
 import { StreetartzProvider } from '../../providers/streetartz/streetartz';
+import { GalleryPage } from '../gallery/gallery';
 /**
  * Generated class for the UploadImagePage page.
  *
@@ -44,7 +45,7 @@ export class UploadImagePage {
       console.log(data);
        this.firebaseService.storeToDB(data, this.category, this.name).then(() =>{
          console.log('added to db');
-         this.navCtrl.setRoot(MainPage);
+         this.navCtrl.setRoot(GalleryPage);
        },
       Error =>{
         console.log(Error)
