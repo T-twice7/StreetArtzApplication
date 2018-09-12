@@ -1,12 +1,14 @@
 page-splash {
     p{
         color: white;
+        animation: 1.5s slideInRight
     }
     .body{
-        background: linear-gradient(#00cfee, #00e5c3ab), url('../../assets/imgs/BG.jpg');
+        background: linear-gradient(#0000003b, #000000), url('../../assets/imgs/BG.jpg');
         height: 100%; 
         background-size: cover; 
         background-position: center;
+        animation: 1.2s fadeIn; 
     }
     .logo{
         width: 100%;

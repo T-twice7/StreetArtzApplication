@@ -1,18 +1,173 @@
-<!--
-  Generated template for the GalleryPage page.
 
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
-<ion-header>
+<ion-header #head color="dark">
 
-  <ion-navbar>
-    <ion-title>Gallery</ion-title>
+  <ion-navbar color="dark">
+      <ion-buttons start>
+          <button ion-button icon-only menuToggle>
+              <ion-icon name="menu"></ion-icon>
+          </button>
+      </ion-buttons>
+
+
+    <ion-title>My Gallery</ion-title>
   </ion-navbar>
 
-</ion-header>
+</ion-header> 
 
 
-<ion-content padding>
+<ion-content autohide [header]="head">
+
+
+
+    <div class="rot">
+      </div>
+  <div id="scroll-content">
+
+      <ion-grid>
+          <!-- insert the for loop on the [ion-col] tag  -->
+          <ion-row>
+              <ion-col>
+                  <img src="../../assets/imgs/1.jpg" alt="Image">
+              </ion-col>
+              <ion-col>
+                  <img src="../../assets/imgs/2.jpg" alt="">
+              </ion-col>
+              <ion-col>
+                  <img src="../../assets/imgs/1.jpg" alt="Image">
+              </ion-col>
+          </ion-row>
+          <ion-row>
+              <ion-col>
+                  <img src="../../assets/imgs/2.jpg" alt="">
+              </ion-col>
+              <ion-col>
+                  <img src="../../assets/imgs/2.jpg" alt="">
+              </ion-col>
+              <ion-col>
+                  <img src="../../assets/imgs/1.jpg" alt="Image"> </ion-col>
+          </ion-row>
+
+          <ion-row>
+              <ion-col>
+                  <img src="../../assets/imgs/1.jpg" alt="Image">
+              </ion-col>
+              <ion-col>
+                  <img src="../../assets/imgs/2.jpg" alt="">
+              </ion-col>
+              <ion-col>
+                  <img src="../../assets/imgs/1.jpg" alt="Image">
+              </ion-col>
+          </ion-row>
+          <ion-row>
+              <ion-col>
+                  <img src="../../assets/imgs/2.jpg" alt="">
+              </ion-col>
+              <ion-col>
+                  <img src="../../assets/imgs/2.jpg" alt="">
+              </ion-col>
+              <ion-col>
+                  <img src="../../assets/imgs/1.jpg" alt="Image"> </ion-col>
+          </ion-row>
+
+          <ion-row>
+              <ion-col>
+                  <img src="../../assets/imgs/1.jpg" alt="Image">
+              </ion-col>
+              <ion-col>
+                  <img src="../../assets/imgs/2.jpg" alt="">
+              </ion-col>
+              <ion-col>
+                  <img src="../../assets/imgs/1.jpg" alt="Image">
+              </ion-col>
+          </ion-row>
+          <ion-row>
+              <ion-col>
+                  <img src="../../assets/imgs/2.jpg" alt="">
+              </ion-col>
+              <ion-col>
+                  <img src="../../assets/imgs/2.jpg" alt="">
+              </ion-col>
+              <ion-col>
+                  <img src="../../assets/imgs/1.jpg" alt="Image"> </ion-col>
+          </ion-row>
+
+          <ion-row>
+              <ion-col>
+                  <img src="../../assets/imgs/1.jpg" alt="Image">
+              </ion-col>
+              <ion-col>
+                  <img src="../../assets/imgs/2.jpg" alt="">
+              </ion-col>
+              <ion-col>
+                  <img src="../../assets/imgs/1.jpg" alt="Image">
+              </ion-col>
+          </ion-row>
+          <ion-row>
+              <ion-col>
+                  <img src="../../assets/imgs/2.jpg" alt="">
+              </ion-col>
+              <ion-col>
+                  <img src="../../assets/imgs/2.jpg" alt="">
+              </ion-col>
+              <ion-col>
+                  <img src="../../assets/imgs/1.jpg" alt="Image"> </ion-col>
+          </ion-row>
+
+          <ion-row>
+              <ion-col>
+                  <img src="../../assets/imgs/1.jpg" alt="Image">
+              </ion-col>
+              <ion-col>
+                  <img src="../../assets/imgs/2.jpg" alt="">
+              </ion-col>
+              <ion-col>
+                  <img src="../../assets/imgs/1.jpg" alt="Image">
+              </ion-col>
+          </ion-row>
+          <ion-row>
+              <ion-col>
+                  <img src="../../assets/imgs/2.jpg" alt="">
+              </ion-col>
+              <ion-col>
+                  <img src="../../assets/imgs/2.jpg" alt="">
+              </ion-col>
+              <ion-col>
+                  <img src="../../assets/imgs/1.jpg" alt="Image"> </ion-col>
+          </ion-row>
+
+          <ion-row>
+              <ion-col>
+                  <img src="../../assets/imgs/1.jpg" alt="Image">
+              </ion-col>
+              <ion-col>
+                  <img src="../../assets/imgs/2.jpg" alt="">
+              </ion-col>
+              <ion-col>
+                  <img src="../../assets/imgs/1.jpg" alt="Image">
+              </ion-col>
+          </ion-row>
+          <ion-row>
+              <ion-col>
+                  <img src="../../assets/imgs/2.jpg" alt="">
+              </ion-col>
+              <ion-col>
+                  <img src="../../assets/imgs/2.jpg" alt="">
+              </ion-col>
+              <ion-col>
+                  <img src="../../assets/imgs/1.jpg" alt="Image"> </ion-col>
+          </ion-row>
+
+      </ion-grid>
+    
+  </div>
+  <ion-fab top right edge>
+        <button ion-fab mini><ion-icon name="add"></ion-icon></button>
+        <ion-fab-list>
+          <button ion-fab (click)="profile()"><ion-icon name="person"></ion-icon></button>
+          <button ion-fab><ion-icon name="add"></ion-icon></button>
+        </ion-fab-list>
+      </ion-fab>
+<button ion-button clear>
+</button>
 
 </ion-content>

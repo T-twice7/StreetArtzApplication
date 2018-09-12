@@ -1,5 +1,10 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { obj } from '../../class';
+import { StreetartzProvider } from '../../providers/streetartz/streetartz';
+import { ProfilePage } from '../profile/profile';
+import arr from '../../class';
+import { ModalController } from 'ionic-angular';
 
 /**
  * Generated class for the GalleryPage page.
@@ -14,12 +19,22 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'gallery.html',
 })
 export class GalleryPage {
-
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  obj = {} as obj
+  arr = [];
+  constructor(public navCtrl: NavController, public navParams: NavParams, public art: StreetartzProvider,public modalCtrl: ModalController) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad GalleryPage');
+  }
+  profile(obj: obj) {
+    this.art.profile(this.obj).then((data) => {
+      this.navCtrl.push(ProfilePage, {obj:data});
+    })
+  }
+  presentModal() {
+    // const modal = this.modalCtrl.create();
+    // modal.present();
   }
 
 }
