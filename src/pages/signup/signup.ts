@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+
 import { IonicPage, NavController, ModalController, NavParams,ViewController, AlertController } from 'ionic-angular';
 import { LoginPage } from '../login/login';
 import { StreetartzProvider } from '../../providers/streetartz/streetartz';
@@ -16,13 +17,16 @@ export class SignupPage {
   obj = {} as obj;
   constructor(public viewCtrl: ViewController,public navCtrl: NavController, public navParams: NavParams, public art: StreetartzProvider, public toastCtrl: ToastController, public alertCtrl: AlertController, public modalCtrl: ModalController) {
 
+
   }
   ionViewDidLoad() {
     console.log('ionViewDidLoad SignupPage');
   }
 
+
   signUp(obj: obj) {
   if(this.obj.password != this.obj.confirmPassword) {
+
       this.presentToast1();
   } else { 
       this.art.register(this.obj);
