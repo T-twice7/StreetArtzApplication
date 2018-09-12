@@ -11,6 +11,7 @@ import { SignupPage } from '../pages/signup/signup';
 import { CategoryPage } from '../pages/category/category';
 import { ProfilePage } from '../pages/profile/profile';
 import { GalleryPage } from '../pages/gallery/gallery';
+import { UploadImagePage } from '../pages/upload-image/upload-image';
 
 
 
@@ -35,7 +36,6 @@ export class MyApp {
 
       { title: 'Categories', component: CategoryPage},
       { title: 'Are you an artist?', component: LoginPage},
-
       { title: 'Gallery', component: GalleryPage},
 
 
