@@ -139,9 +139,8 @@ page-gallery {
     @media screen and (min-width:770px){
         @media screen and (max-width:1025px){
             #scroll-content{
-                background: pink;
+                // background: pink;
                 margin-top: -130px;
-                border: 2px solid red;
             }
             img{
                 height: 250px;
@@ -157,7 +156,7 @@ page-gallery {
                 width: 125vw;
                 height: 30vh;
                 transform: rotate(-15deg);
-                margin-top: -300px;
+                margin-top: -280px;
                 margin-left: -120px;
                 background: #222;
             }

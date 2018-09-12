@@ -51,7 +51,7 @@ export class UploadImagePage {
         console.log(Error)
       })
     }, Error =>{
-      console.log(Error )
+      console.log(Error)
     })
 }
 }
