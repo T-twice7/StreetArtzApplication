@@ -23,13 +23,14 @@ export class AutohideDirective {
 
   ngOnInit(){
     this.headerheight = this.header.clientHeight;
-    this.renderer.setElementStyle(this.header, 'webkitTransition', 'top 700ms'); 
+    this.renderer.setElementStyle(this.header, 'webkitTransition', 'top 330ms'); 
     this.scrollContent = this.element.nativeElement.getElementsByClassName("scroll-content")[0];
-    this.renderer.setElementStyle(this.scrollContent, 'webkitTransition','margin-top 700ms')
+    this.renderer.setElementStyle(this.scrollContent, 'webkitTransition','margin-top 330ms')
   }
 
   onContentScroll(event){
-    console.log(event.deltaY);
+    
+    console.log(this.header.clientHeight);
     if(event.deltaY > 50){
       this.renderer.setElementStyle(this.header, 'top','-56px'); 
       this.renderer.setElementStyle(this.scrollContent, 'margin-top', '0px')
@@ -37,7 +38,6 @@ export class AutohideDirective {
     else if (event.deltaY < -50){
       this.renderer.setElementStyle(this.header, 'top','0px'); 
       this.renderer.setElementStyle(this.scrollContent, 'margin-top', '56px')
-    }
-    
+    }    
   }
 }

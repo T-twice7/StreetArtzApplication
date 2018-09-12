@@ -2,6 +2,7 @@ page-category {
     text-align: center;
     .theBody{
         background: rgb(239, 239, 239);
+        animation: 1s bounceInDown;
     }
 
     .slant{
@@ -132,7 +133,7 @@ page-category {
     @media screen and (min-width:770px){
         @media screen and (max-width:1025px){
             #scroll-content{
-                background: pink;
+                background: red;
                 margin-top: -130px;
             }
             img{
@@ -148,7 +149,7 @@ page-category {
                 width: 125vw;
                 height: 30vh;
                 transform: rotate(-15deg);
-                margin-top: -280px;
+                margin-top: -300px;
                 margin-left: -120px;
                 background: #222;
             }
