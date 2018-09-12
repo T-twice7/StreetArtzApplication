@@ -2,21 +2,22 @@ page-signup {
     
 div.scroll-content{
 
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    // display: flex;
+    // flex-direction: column;
+    // justify-content: center;
+    // align-items: center;
     // position: absolute;
     .everything{
         position: absolute;
         text-align: center;
+        margin-top: 5%;
     }
     .mtop{
         width: 0px;
         height: 0px;
-        border-top: 50vh solid #222;
+        border-top: 50vh solid rgba(34, 34, 34, 0.658);
         border-left: 115vw solid rgb(239, 239, 239);
-        border-bottom: 50vh solid #222;
+        border-bottom: 50vh solid rgba(34, 34, 34, 0.658);
     }
 
     ion-header{
@@ -27,7 +28,7 @@ div.scroll-content{
                
                 cursor: pointer;
                 ion-icon{
-                    color: white;
+                    color: black;
                     font-size: 200%;
                     font-weight: bolder;
                 }
@@ -51,7 +52,10 @@ div.scroll-content{
         background-color: rgba(255, 255, 255, 0.877);
         border-radius: 20px;
         box-shadow: 0 0 2px black;
-        
+        width: 95vw;
+
+        // height: 40vh;
+        margin-top: 3%;
         ion-item{
             margin: 1px;
             background-color: rgba(255, 255, 255, 0.329);

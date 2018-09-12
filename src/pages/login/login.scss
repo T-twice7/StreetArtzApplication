@@ -1,10 +1,5 @@
 page-login {
 div.scroll-content{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    // position: absolute;
     .everything{
         position: absolute;
         text-align: center;
@@ -12,25 +7,27 @@ div.scroll-content{
     .mtop{
         width: 0px;
         height: 0px;
-        border-top: 50vh solid #222;
-        border-right: 100vw solid rgb(239, 239, 239);
-        border-bottom: 50vh solid #222;
+        border-top: 50vh solid rgba(34, 34, 34, 0.658);
+        border-left: 115vw solid rgb(239, 239, 239);
+        border-bottom: 50vh solid rgba(34, 34, 34, 0.658);
     }
     ion-header{
-        position: absolute;
         ion-buttons{
             button{
                 background-color: transparent;
-               
                 cursor: pointer;
                 ion-icon{
-                    color: white;
+                    color: black;
                     font-size: 200%;
                     font-weight: bolder;
                 }
             }
         }
     }
+
+       
+        
+    
         margin: 0%;
         div.logo{
             display: flex;
@@ -38,8 +35,10 @@ div.scroll-content{
     justify-content: center;
     align-items: center;
         h1{
-            height: 5em;
-            width: 5em;
+            height: 30vh;
+            width: 35vw;
+            width: 30vh;
+            margin-bottom: 5%;
           }
     }
 
@@ -48,7 +47,8 @@ div.scroll-content{
         background-color: rgba(255, 255, 255, 0.877);
         border-radius: 20px;
         box-shadow: 0 0 2px black;
-        
+        width: 90vw;
+        margin-bottom: 10%;
         ion-item{
             margin: 1px;
             background-color: rgba(255, 255, 255, 0.329);

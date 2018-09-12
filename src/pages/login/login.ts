@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { SignupPage } from '../signup/signup';
 import { StreetartzProvider } from '../../providers/streetartz/streetartz';
 import { ModalController,ViewController } from 'ionic-angular';
+import { MainPage } from '../main/main';
 
 
 /**
@@ -26,13 +27,15 @@ export class LoginPage {
     console.log('ionViewDidLoad LoginPage');
   }
 
+
   signup(){
     this.navCtrl.setRoot(SignupPage)
     const modal = this.modalCtrl.create(SignupPage);
     modal.present();
   }
   close(){
-    this.viewCtrl.dismiss();
+    // this.navCtrl.setRoot(MainPage)
+    this.viewCtrl.dismiss(MainPage);
   };
 
 }

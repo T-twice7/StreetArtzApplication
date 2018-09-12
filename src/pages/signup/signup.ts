@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ViewController, ModalController } from 'ionic-angular';
 import { LoginPage } from '../login/login';
 import { StreetartzProvider } from '../../providers/streetartz/streetartz'
 import { obj } from '../../class';
@@ -13,15 +13,17 @@ import { AlertController } from 'ionic-angular';
 })
 export class SignupPage {
   obj = {} as obj
-  constructor(public navCtrl: NavController, public navParams: NavParams, public art: StreetartzProvider, public toastCtrl: ToastController, public alertCtrl: AlertController,public viewCtrl: ViewController) {
+  constructor(public navCtrl: NavController,public modalCtrl: ModalController, public navParams: NavParams, public art: StreetartzProvider, public toastCtrl: ToastController, public alertCtrl: AlertController,public viewCtrl: ViewController) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad SignupPage');
   }
   close() {
-    this.viewCtrl.dismiss();
+    const modal = this.modalCtrl.create(LoginPage);
+    modal.present();
   }
+
   signUp(obj:obj) {
   
     this.art.register(this.obj).then((data) => {
