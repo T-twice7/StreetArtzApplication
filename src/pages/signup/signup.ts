@@ -1,10 +1,14 @@
 import { Component } from '@angular/core';
 
+import { IonicPage, NavController, ModalController, NavParams,ViewController, AlertController } from 'ionic-angular';
+
+
 
 
 
 
 import { IonicPage, NavController, ModalController, NavParams,ViewController, AlertController } from 'ionic-angular';
+
 
 
 

@@ -87,5 +87,11 @@ export class StreetartzProvider {
      
     
   }
+forgotpassword(email){
+  return new Promise((resolve, reject)=>{
+    firebase.auth().sendPasswordResetEmail(email) ;
+    resolve();
+ })
+ }
 }
 
