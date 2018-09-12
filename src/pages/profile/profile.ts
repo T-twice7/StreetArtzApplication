@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { StreetartzProvider } from '../../providers/streetartz/streetartz'
 import { obj } from '../../class';
+import { GalleryPage } from '../gallery/gallery';
 /**
  * Generated class for the ProfilePage page.
  *
@@ -28,5 +29,8 @@ export class ProfilePage implements OnInit {
   ngOnInit() {
     this.obj = this.navParams.get("obj");
     console.log(this.obj);
+  }
+  next(){
+    this.navCtrl.push(GalleryPage);
   }
 }

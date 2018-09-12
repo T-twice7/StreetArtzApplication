@@ -20,11 +20,9 @@ import { PortfolioPage } from '../pages/portfolio/portfolio';
 
 
 import { StreetartzProvider } from '../providers/streetartz/streetartz';
-
 import { HttpClientModule } from '@angular/common/http';
-
-
-import { AutohideDirective } from '../directives/autohide/autohide'
+import { AutohideDirective } from '../directives/autohide/autohide';
+import { UploadImagePage } from '../pages/upload-image/upload-image';
 
 
 
@@ -45,7 +43,8 @@ import { AutohideDirective } from '../directives/autohide/autohide'
     MainPage,
     PortfolioPage,
     LoginPage,
-    SignupPage
+    SignupPage,
+    UploadImagePage
   ],
   imports: [
     BrowserModule, HttpClientModule ,
@@ -65,7 +64,8 @@ import { AutohideDirective } from '../directives/autohide/autohide'
     MainPage,
     PortfolioPage,
     LoginPage,
-    SignupPage
+    SignupPage,
+    UploadImagePage
   ],
   providers: [
     StatusBar,
