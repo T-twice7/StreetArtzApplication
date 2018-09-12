@@ -1,6 +1,8 @@
 page-category {
+    text-align: center;
     .theBody{
         background: rgb(239, 239, 239);
+        animation: 1s bounceInDown;
     }
 
     .slant{
@@ -22,7 +24,7 @@ page-category {
         @media screen and (max-width: 321px){
        
             #scroll-content{
-                background: red;
+                // background: red;
                 margin-top: -70px;
             }
             img{
@@ -43,8 +45,8 @@ page-category {
     @media screen and (min-width: 322px) {
         @media screen and (max-width: 360px){
             #scroll-content{
-                background: red;
-                margin-top: -80px;
+                // background: red;
+                margin-top: -70px;
             }
             img{
                 height: 100px;
@@ -131,7 +133,7 @@ page-category {
     @media screen and (min-width:770px){
         @media screen and (max-width:1025px){
             #scroll-content{
-                background: pink;
+                background: red;
                 margin-top: -130px;
             }
             img{
@@ -147,7 +149,7 @@ page-category {
                 width: 125vw;
                 height: 30vh;
                 transform: rotate(-15deg);
-                margin-top: -280px;
+                margin-top: -300px;
                 margin-left: -120px;
                 background: #222;
             }

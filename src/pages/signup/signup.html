@@ -1,38 +1,57 @@
+<ion-header>
+</ion-header>
+<ion-content>
 
-<ion-content padding>
+  <ion-fab top left>
+    <button ion-button clear color="light" (click)="dismiss()">
+      <h2><ion-icon name="close"></ion-icon></h2>
+      
+    </button>
+  </ion-fab>
+  <div class="bg"></div>
+      <div class="logo">
+      <img src="../../assets/imgs/theLogo/ANTZ Logo.png" alt="">
+    </div>
+  <div class="content">
 
-  <ion-list>
-    <ion-item>
-      <ion-label stacked>Full name</ion-label>
-      <ion-input type="text" [(ngModel)]="obj.name"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label stacked>Email</ion-label>
-      <ion-input type="email" [(ngModel)]="obj.email"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label stacked>Password</ion-label>
-      <ion-input type="password" [(ngModel)]="obj.password"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label stacked>Confirm Password</ion-label>
-      <ion-input type="password" [(ngModel)]="obj.confirmPassword"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label>Cateogry</ion-label>
-      <ion-select [(ngModel)]="obj.cateogry" interface="action-sheet">
-        <ion-option value="Photography">Photography</ion-option>
-        <ion-option value="Sculpting">Sculpting</ion-option>
-        <ion-option value="Painting">Painting</ion-option>
-        <ion-option value="Architecture">Architecture</ion-option>
-        <ion-option value="Drawing">Drawing</ion-option>
-        <ion-option value="General">General</ion-option>
-      </ion-select>
-    </ion-item>
-  </ion-list>
-  <button ion-button (click)="signUp()" >SignUp</button>
+    <div class="form">
+      <div class="theList">
+        <ion-item>
+          <ion-label stacked>Full name</ion-label>
+          <ion-input type="text" [(ngModel)]="obj.name"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label stacked>Email</ion-label>
+          <ion-input type="email" [(ngModel)]="obj.email"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label stacked>Password</ion-label>
+          <ion-input type="password" [(ngModel)]="obj.password"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label stacked>Confirm Password</ion-label>
+          <ion-input type="password" [(ngModel)]="obj.confirmPassword"></ion-input>
+        </ion-item>
+        <ion-item class="cat">
+          <ion-label>Category</ion-label>
+          <ion-select [(ngModel)]="obj.cateogry" interface="action-sheet">
+            <ion-option value="Photography">Photography</ion-option>
+            <ion-option value="Sculpting">Sculpting</ion-option>
+            <ion-option value="Painting">Painting</ion-option>
+            <ion-option value="Architecture">Architecture</ion-option>
+            <ion-option value="Drawing">Drawing</ion-option>
+            <ion-option value="General">General</ion-option>
+          </ion-select>
+        </ion-item>
+      </div>
+    </div>
 
+    <div class="btn">
+      <button ion-button round color="darker" (click)="signUp()">SIGN UP</button>
+
+    </div>
+
+
+  </div>
 
 </ion-content>
-
-

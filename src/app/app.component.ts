@@ -5,10 +5,13 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { ListPage } from '../pages/list/list';
 import { SplashPage } from '../pages/splash/splash';
 import { LoginPage } from '../pages/login/login';
+
 import { SignupPage } from '../pages/signup/signup';
 import { CategoryPage } from '../pages/category/category';
 import { ProfilePage } from '../pages/profile/profile';
 import { GalleryPage } from '../pages/gallery/gallery';
+
+
 
 
 @Component({
@@ -17,7 +20,12 @@ import { GalleryPage } from '../pages/gallery/gallery';
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = GalleryPage ;
+  rootPage: any = LoginPage;
+
+
+
+
+
   pages: Array<{title: string, component: any}>;
 
   constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
@@ -25,9 +33,15 @@ export class MyApp {
 
     // used for an example of ngFor and navigation
     this.pages = [
-      { title: 'List', component: ListPage },
-      { title: 'Login', component: LoginPage}
+
    
+
+      { title: 'Categories', component: CategoryPage},
+      { title: 'Sign In', component: LoginPage},
+      { title: 'Sign Up', component: SignupPage},
+      { title: 'Gallery', component: GalleryPage},
+
+
     ];
 
   }

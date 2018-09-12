@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
 import { SignupPage } from '../signup/signup';
 import { StreetartzProvider } from '../../providers/streetartz/streetartz';
 import { MainPage } from '../main/main';
@@ -7,6 +7,12 @@ import { obj } from '../../class';
 import { ModalController,ViewController } from 'ionic-angular';
 import { LoadingController } from 'ionic-angular';
 import { CategoryPage } from '../category/category';
+
+
+
+
+declare var firebase;
+
 /**
  * Generated class for the LoginPage page.
  *
@@ -24,8 +30,9 @@ import { CategoryPage } from '../category/category';
 export class LoginPage {
   email:any;
   password:any;
-  obj = {} as obj
-  constructor(public navCtrl: NavController, public navParams: NavParams,public modalCtrl: ModalController, public viewCtrl: ViewController,public art: StreetartzProvider,public loadingCtrl: LoadingController) {
+  obj = {} as obj;
+  errMsg;
+  constructor(public alertCtrl: AlertController,public navCtrl: NavController, public navParams: NavParams,public modalCtrl: ModalController, public viewCtrl: ViewController,public art: StreetartzProvider,public loadingCtrl: LoadingController) {
   }
   ionViewDidLoad() {
     console.log('ionViewDidLoad LoginPage');
@@ -33,7 +40,6 @@ export class LoginPage {
   }
 
   signup(){
-    this.navCtrl.setRoot(SignupPage)
     const modal = this.modalCtrl.create(SignupPage);
     modal.present();
   }
@@ -45,7 +51,16 @@ export class LoginPage {
      this.presentLoading();
      this.navCtrl.setRoot(CategoryPage);
     } , (error)=>{
-      alert(error)
+      console.log(error.message);
+      
+
+      const alert = this.alertCtrl.create({
+        title: 'Sign In Error!',
+        subTitle: error,
+        buttons: ['OK']
+      });
+      alert.present();
+
     })
   }
   presentLoading() {
