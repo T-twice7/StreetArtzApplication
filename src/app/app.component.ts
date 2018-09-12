@@ -29,7 +29,7 @@ export class MyApp {
 
 
 
-  rootPage: any = CategoryPage;
+
 
   rootPage: any = SplashPage;
 

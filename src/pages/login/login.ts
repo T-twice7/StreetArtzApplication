@@ -90,12 +90,5 @@ forgotpassword(obj:obj){
   })
 }
 
-
-  forgotpassword(obj:obj){
-    this.art.forgotpassword(this.obj.email).then(()=>{
-      alert("Check your email")
-    } , (error)=>{
- 
-    })
-  }
+}
 
