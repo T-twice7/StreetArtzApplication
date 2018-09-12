@@ -22,6 +22,12 @@ import { PortfolioPage } from '../pages/portfolio/portfolio';
 import { StreetartzProvider } from '../providers/streetartz/streetartz';
 import { LoginPage } from '../pages/login/login';
 
+import { HttpClientModule } from '@angular/common/http';
+
+
+import { AutohideDirective } from '../directives/autohide/autohide'
+
+
 
 
 
@@ -30,6 +36,7 @@ import { LoginPage } from '../pages/login/login';
     MyApp,
     SplashPage,
     ListPage,
+    AutohideDirective,
     CategoryPage,
     GalleryPage,
     LoginPage,
@@ -42,7 +49,7 @@ import { LoginPage } from '../pages/login/login';
     SignupPage
   ],
   imports: [
-    BrowserModule,
+    BrowserModule, HttpClientModule ,
     IonicModule.forRoot(MyApp),
   ],
   bootstrap: [IonicApp],
