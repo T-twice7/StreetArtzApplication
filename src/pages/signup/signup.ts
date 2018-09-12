@@ -7,6 +7,7 @@ import { LoginPage } from '../login/login';
 import { StreetartzProvider } from '../../providers/streetartz/streetartz'
 import { obj } from '../../class';
 import { ToastController } from 'ionic-angular';
+import { CategoryPage } from '../category/category';
 
 @IonicPage()
 @Component({
@@ -27,7 +28,7 @@ export class SignupPage {
       this.art.register(this.obj);
       console.log(this.obj);
       this.presentToast();
-      this.navCtrl.push(LoginPage); 
+      this.navCtrl.setRoot(CategoryPage); 
   }
       
   }

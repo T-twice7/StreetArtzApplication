@@ -16,7 +16,7 @@ export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
 
-  rootPage: any = SplashPage;
+  rootPage: any = SignupPage;
 
 
 
