@@ -5,6 +5,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { ListPage } from '../pages/list/list';
 import { SplashPage } from '../pages/splash/splash';
 import { LoginPage } from '../pages/login/login';
+import { MainPage } from '../pages/main/main';
 
 import { SignupPage } from '../pages/signup/signup';
 import { CategoryPage } from '../pages/category/category';
@@ -22,10 +23,6 @@ export class MyApp {
 
   rootPage: any = CategoryPage;
 
-
-
-
-
   pages: Array<{title: string, component: any}>;
 
   constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
@@ -37,8 +34,8 @@ export class MyApp {
    
 
       { title: 'Categories', component: CategoryPage},
-      { title: 'Sign In', component: LoginPage},
-      { title: 'Sign Up', component: SignupPage},
+      { title: 'Are you an artist?', component: LoginPage},
+
       { title: 'Gallery', component: GalleryPage},
 
 

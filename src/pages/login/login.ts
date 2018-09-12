@@ -11,6 +11,7 @@ import { CategoryPage } from '../category/category';
 
 
 
+
 declare var firebase;
 
 /**
@@ -39,10 +40,12 @@ export class LoginPage {
     
   }
 
+
   signup(){
     const modal = this.modalCtrl.create(SignupPage);
     modal.present();
   }
+
   dismiss() {
     this.viewCtrl.dismiss();
   }
@@ -80,3 +83,4 @@ forgotpassword(obj:obj){
 
 
 }
+
