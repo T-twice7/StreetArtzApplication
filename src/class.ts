@@ -5,3 +5,5 @@ password:string;
 cateogry:string;
 confirmPassword:string;
 }
+export default arr;
+var arr = new Array();

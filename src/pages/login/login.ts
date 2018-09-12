@@ -3,14 +3,16 @@ import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angu
 import { SignupPage } from '../signup/signup';
 import { StreetartzProvider } from '../../providers/streetartz/streetartz';
 import { MainPage } from '../main/main';
-
-import { ModalController,ViewController } from 'ionic-angular';
 import { obj } from '../../class';
+import { ModalController,ViewController } from 'ionic-angular';
 import { LoadingController } from 'ionic-angular';
+import { CategoryPage } from '../category/category';
+
 
 
 
 declare var firebase;
+
 /**
  * Generated class for the LoginPage page.
  *
@@ -47,6 +49,7 @@ export class LoginPage {
   login(obj:obj) {
     this.art.login(this.obj.email,this.obj.password ).then(()=>{
      this.presentLoading();
+     this.navCtrl.setRoot(CategoryPage);
     } , (error)=>{
       console.log(error.message);
       
