@@ -5,7 +5,7 @@ import { obj } from '../../class';
 import { AlertController } from 'ionic-angular';
 import { LoadingController } from 'ionic-angular';
 import { ToastController } from 'ionic-angular';
-
+// import arr  from '../../class';
 
 declare var firebase;
 
@@ -18,8 +18,10 @@ declare var firebase;
 @Injectable()
 export class StreetartzProvider {
   obj = {} as obj;
+  arr =[];
   constructor(public toastCtrl: ToastController, public alertCtrl: AlertController, public loadingCtrl: LoadingController) {
     console.log('Hello StreetartzProvider Provider');
+
   }
 
   logout() {
@@ -57,7 +59,6 @@ export class StreetartzProvider {
         });
         alert.present();
         console.log(error);
-
       })
     })
   }
@@ -70,6 +71,21 @@ export class StreetartzProvider {
 
       });
     })
+  }
+
+  profile(obj:obj){
+    return new Promise((pass,fail)=>{
+      var userID = firebase.auth().currentUser;
+      firebase.database().ref("profiles/" + userID.uid).on('value',(data: any) => {
+        var username = data.val();
+       this.arr.push(username);
+       console.log(this.arr);
+      });
+      pass(this.arr) ;
+    })
+
+     
+    
   }
 }
 
