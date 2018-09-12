@@ -1,31 +1,46 @@
-
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { LoginPage } from '../../pages/login/login';
 import { obj } from '../../class';
-import { ToastController } from 'ionic-angular';
 import { AlertController } from 'ionic-angular';
 import { LoadingController } from 'ionic-angular';
+import { ToastController } from 'ionic-angular';
+// import arr  from '../../class';
+
 declare var firebase;
+
+/*
+  Generated class for the StreetartzProvider provider.
+
+  See https://angular.io/guide/dependency-injection for more info on providers
+  and Angular DI.
+*/
 @Injectable()
 export class StreetartzProvider {
   obj = {} as obj;
-  arr = [];
-  keys =[];
+  arr =[];
   constructor(public toastCtrl: ToastController, public alertCtrl: AlertController, public loadingCtrl: LoadingController) {
     console.log('Hello StreetartzProvider Provider');
 
   }
 
+  logout() {
+    firebase.auth().signOut().then(function () {
+      // Sign-out successful.
+    }).catch(function (error) {
+      // An error happened.
+    })
+  }
   presentToast1() {
     const toast = this.toastCtrl.create({
       message: 'email or password doesnot match!',
       duration: 3000
+
     });
-    toast.present();
   }
   register(obj: obj) {
-    return firebase.auth().createUserWithEmailAndPassword(obj.email,obj.password).then((newUser) => {
-      firebase.auth().signInWithEmailAndPassword(obj.email,obj.password).then((authenticatedUser) => {
+    return firebase.auth().createUserWithEmailAndPassword(obj.email, obj.password).then((newUser) => {
+      firebase.auth().signInWithEmailAndPassword(obj.email, obj.password).then((authenticatedUser) => {
         var user = firebase.auth().currentUser
         firebase.database().ref("profiles/" + user.uid).set(obj);
         // this.navCtrl.setRoot(MainPage);
@@ -46,40 +61,31 @@ export class StreetartzProvider {
         console.log(error);
       })
     })
-
   }
- login(email , password){
-    return new Promise((resolve, reject)=>{
-      firebase.auth().signInWithEmailAndPassword(email , password).then(()=>{
+  login(email, password) {
+    return new Promise((resolve, reject) => {
+      firebase.auth().signInWithEmailAndPassword(email, password).then(() => {
         resolve()
-      }, Error =>{
+      }, Error => {
         alert(Error)
- 
-      }) ;
+
+      });
     })
   }
 
   profile(obj:obj){
     return new Promise((pass,fail)=>{
       var userID = firebase.auth().currentUser;
-      console.log(userID.uid);
-      firebase.database().ref("profiles/" + userID.uid).on('value', (data: any) => {
+      firebase.database().ref("profiles/" + userID.uid).on('value',(data: any) => {
         var username = data.val();
-        console.log(username);
-        for (var i = 0; i < this.keys.length; i++) {
-          var k = this.keys[i];
-         
-          let object = {
-            key: k
-          }
-          this.keys.push(k);
-          this.arr.push(object);
-    
-        }
+       this.arr.push(username);
+       console.log(this.arr);
       });
+      pass(this.arr) ;
     })
 
      
     
   }
 }
+

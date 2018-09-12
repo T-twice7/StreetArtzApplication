@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
+import { StreetartzProvider } from '../../providers/streetartz/streetartz'
+import { obj } from '../../class';
 /**
  * Generated class for the ProfilePage page.
  *
@@ -13,14 +14,19 @@ declare var firebase;
   selector: 'page-profile',
   templateUrl: 'profile.html',
 })
-export class ProfilePage {
- 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+export class ProfilePage implements OnInit {
+
+
+  obj;
+  constructor(public navCtrl: NavController, public navParams: NavParams, public art: StreetartzProvider) {
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad ProfilePage');
+  // ionViewDidLoad() {
+  //   console.log('ionViewDidLoad ProfilePage');
 
+  // }
+  ngOnInit() {
+    this.obj = this.navParams.get("obj");
+    console.log(this.obj);
   }
-  
 }

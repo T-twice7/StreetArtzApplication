@@ -8,6 +8,7 @@ import { LoginPage } from '../pages/login/login';
 import { SignupPage } from '../pages/signup/signup';
 import { CategoryPage } from '../pages/category/category';
 import { ProfilePage } from '../pages/profile/profile';
+import { GalleryPage } from '../pages/gallery/gallery';
 
 
 @Component({
@@ -16,7 +17,7 @@ import { ProfilePage } from '../pages/profile/profile';
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = SignupPage ;
+  rootPage: any = GalleryPage ;
   pages: Array<{title: string, component: any}>;
 
   constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
@@ -24,9 +25,9 @@ export class MyApp {
 
     // used for an example of ngFor and navigation
     this.pages = [
-      { title: 'Splash', component: SplashPage },
       { title: 'List', component: ListPage },
       { title: 'Login', component: LoginPage}
+   
     ];
 
   }

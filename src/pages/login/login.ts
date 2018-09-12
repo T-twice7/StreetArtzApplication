@@ -2,8 +2,9 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { SignupPage } from '../signup/signup';
 import { StreetartzProvider } from '../../providers/streetartz/streetartz';
-import { ModalController,ViewController } from 'ionic-angular';
+import { MainPage } from '../main/main';
 import { obj } from '../../class';
+import { ModalController,ViewController } from 'ionic-angular';
 import { LoadingController } from 'ionic-angular';
 import { CategoryPage } from '../category/category';
 /**
@@ -18,13 +19,17 @@ import { CategoryPage } from '../category/category';
   selector: 'page-login',
   templateUrl: 'login.html',
 })
+
+
 export class LoginPage {
+  email:any;
+  password:any;
   obj = {} as obj
   constructor(public navCtrl: NavController, public navParams: NavParams,public modalCtrl: ModalController, public viewCtrl: ViewController,public art: StreetartzProvider,public loadingCtrl: LoadingController) {
   }
-
   ionViewDidLoad() {
     console.log('ionViewDidLoad LoginPage');
+    
   }
 
   signup(){
@@ -50,4 +55,7 @@ export class LoginPage {
     });
     loader.present();
   }
+
+
+
 }
