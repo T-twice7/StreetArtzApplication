@@ -1,6 +1,13 @@
 <ion-header>
 </ion-header>
 <ion-content>
+
+  <ion-fab top left>
+    <button ion-button clear color="light" (click)="dismiss()">
+      <h2><ion-icon name="close"></ion-icon></h2>
+      
+    </button>
+  </ion-fab>
   <div class="bg"></div>
       <div class="logo">
       <img src="../../assets/imgs/theLogo/ANTZ Logo.png" alt="">
@@ -40,7 +47,7 @@
     </div>
 
     <div class="btn">
-      <button ion-button round color="darker" (click)="signUp()">SignUp</button>
+      <button ion-button round color="darker" (click)="signUp()">SIGN UP</button>
 
     </div>
 

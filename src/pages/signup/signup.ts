@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 
-import { IonicPage, NavController, NavParams,ViewController, AlertController } from 'ionic-angular';
+import { IonicPage, NavController, ModalController, NavParams,ViewController, AlertController } from 'ionic-angular';
 
 import { LoginPage } from '../login/login';
 import { StreetartzProvider } from '../../providers/streetartz/streetartz'
@@ -16,7 +16,7 @@ import { CategoryPage } from '../category/category';
 })
 export class SignupPage {
   obj = {} as obj;
-  constructor(public navCtrl: NavController, public navParams: NavParams, public art: StreetartzProvider, public toastCtrl: ToastController, public alertCtrl: AlertController) {
+  constructor(public viewCtrl: ViewController,public navCtrl: NavController, public navParams: NavParams, public art: StreetartzProvider, public toastCtrl: ToastController, public alertCtrl: AlertController, public modalCtrl: ModalController) {
   }
   ionViewDidLoad() {
     console.log('ionViewDidLoad SignupPage');
@@ -31,6 +31,9 @@ export class SignupPage {
       this.navCtrl.setRoot(CategoryPage); 
   }
       
+  }
+  dismiss() {
+    this.viewCtrl.dismiss();
   }
 
   presentToast() {
