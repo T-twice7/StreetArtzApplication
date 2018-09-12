@@ -22,16 +22,20 @@ export class StreetartzProvider {
   constructor(public toastCtrl: ToastController, public alertCtrl: AlertController, public loadingCtrl: LoadingController) {
     console.log('Hello StreetartzProvider Provider');
 
+  
   }
 
   logout() {
     firebase.auth().signOut().then(function () {
+
       // Sign-out successful.
     }).catch(function (error) {
       // An error happened.
     })
   }
+
   presentToast1() {
+
     const toast = this.toastCtrl.create({
       message: 'email or password doesnot match!',
       duration: 3000
@@ -107,6 +111,7 @@ forgotpassword(email){
  })
  }
 
+
 uploadPic(pic,name){
 
   let loading = this.loadingCtrl.create({
@@ -149,6 +154,7 @@ return new Promise((accpt,rejc) =>{
     });
   })
 }
+
 
 
 }
