@@ -16,7 +16,7 @@ export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
 
-  rootPage: any = LoginPage;
+  rootPage: any = CategoryPage;
 
 
 
@@ -29,8 +29,8 @@ export class MyApp {
     // used for an example of ngFor and navigation
     this.pages = [
       { title: 'Categories', component: CategoryPage},
-      { title: 'Sign In', component: LoginPage},
-      { title: 'Sign Up', component: SignupPage},
+      { title: 'Are you an artist?', component: LoginPage},
+
       { title: 'Gallery', component: GalleryPage},
 
     ];
