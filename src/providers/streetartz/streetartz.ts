@@ -93,5 +93,41 @@ forgotpassword(email){
     resolve();
  })
  }
+
+uploadPic(pic,name){
+
+  let loading = this.loadingCtrl.create({
+    spinner: 'bubbles',
+    content: 'Please wait',
+    duration: 3000
+  });
+return new Promise((accpt,rejc) =>{
+  loading.present();
+  firebase.storage().ref(name).putString(pic, 'data_url').then(() =>{
+  accpt(name);
+}, Error =>{
+  rejc(Error.message)
+})
+})
+}
+storeToDB(name, category, picName){
+return new Promise((accpt,rejc) =>{
+  var storageRef = firebase.storage().ref(name);
+  storageRef.getDownloadURL().then(url => {
+    console.log(url)
+    var user = firebase.auth().currentUser;
+    var link =  url;
+    firebase.database().ref('uploads/' + user.uid).push({
+          downloadurl :link,
+          name : picName,
+          category: category,
+        });
+        accpt('success');
+  }, Error =>{
+    rejc(Error.message);
+    console.log(Error.message);
+    });
+  })
+}
 }
 
