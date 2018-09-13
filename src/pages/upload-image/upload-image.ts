@@ -39,6 +39,7 @@ export class UploadImagePage {
         this.url = event.target.result;
       }
       reader.readAsDataURL(event.target.files[0]);
+      console.log(reader.onload);
     }
   }
   uploadPicture(){
