@@ -40,7 +40,6 @@ export class SignupPage {
   dismiss() {
     this.viewCtrl.dismiss();
   }
-
   presentToast() {
 
     const toast = this.toastCtrl.create({
