@@ -13,9 +13,9 @@ import { ProfilePage } from '../pages/profile/profile';
 import { GalleryPage } from '../pages/gallery/gallery';
 import { UploadImagePage } from '../pages/upload-image/upload-image';
 
-// import firebase from 'firebase';
+import firebase from 'firebase';
 
-declare var firebase;
+// declare var firebase;
 
 @Component({
   templateUrl: 'app.html'

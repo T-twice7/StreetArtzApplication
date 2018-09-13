@@ -6,6 +6,7 @@ import { StreetartzProvider } from '../../providers/streetartz/streetartz';
 import { obj } from '../../class';
 import { ToastController } from 'ionic-angular';
 import { CategoryPage } from '../category/category';
+import firebase from 'firebase';
 
 @IonicPage()
 @Component({
