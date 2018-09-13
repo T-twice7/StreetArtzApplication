@@ -5,6 +5,7 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { ListPage } from '../pages/list/list';
 
+import firebase from 'firebase';
 
 import { SplashPage } from '../pages/splash/splash';
 import { StatusBar } from '@ionic-native/status-bar';
@@ -17,15 +18,12 @@ import { SignupPage } from '../pages/signup/signup';
 import { ContactModalPage } from '../pages/contact-modal/contact-modal';
 import { MainPage } from '../pages/main/main';
 import { PortfolioPage } from '../pages/portfolio/portfolio';
-
-
 import { StreetartzProvider } from '../providers/streetartz/streetartz';
-import { LoginPage } from '../pages/login/login';
-
-import { HttpClientModule } from '@angular/common/http';
-
-
 import { AutohideDirective } from '../directives/autohide/autohide'
+import { LoginPage } from '../pages/login/login';
+import { HttpClientModule } from '@angular/common/http';
+import { UploadImagePage } from '../pages/upload-image/upload-image';
+
 
 
 
@@ -46,7 +44,8 @@ import { AutohideDirective } from '../directives/autohide/autohide'
     MainPage,
     PortfolioPage,
     LoginPage,
-    SignupPage
+    SignupPage,
+    UploadImagePage
   ],
   imports: [
     BrowserModule, HttpClientModule ,
@@ -66,7 +65,8 @@ import { AutohideDirective } from '../directives/autohide/autohide'
     MainPage,
     PortfolioPage,
     LoginPage,
-    SignupPage
+    SignupPage,
+    UploadImagePage
   ],
   providers: [
     StatusBar,

@@ -1,32 +1,28 @@
-
 <ion-header #head color="dark">
 
-  <ion-navbar color="dark">
-      <ion-buttons start>
-          <button ion-button icon-only menuToggle>
-              <ion-icon name="menu"></ion-icon>
-          </button>
-      </ion-buttons>
+    <ion-navbar color="dark">
+        <ion-buttons start>
+            <button ion-button icon-only menuToggle>
+                <ion-icon name="menu"></ion-icon>
+            </button>
+        </ion-buttons>
 
 
-    <ion-title>My Gallery</ion-title>
-  </ion-navbar>
+        <ion-title>My Gallery</ion-title>
+    </ion-navbar>
 
-</ion-header> 
+</ion-header>
 
 
 <ion-content autohide [header]="head">
-
-
-
     <div class="rot">
       </div>
   <div id="scroll-content">
 
-      <ion-grid>
+      <ion-grid no-padding>
           <!-- insert the for loop on the [ion-col] tag  -->
           <ion-row>
-              <ion-col>
+              <ion-col >
                   <img src="../../assets/imgs/1.jpg" alt="Image">
               </ion-col>
               <ion-col>
@@ -35,8 +31,7 @@
               <ion-col>
                   <img src="../../assets/imgs/1.jpg" alt="Image">
               </ion-col>
-          </ion-row>
-          <ion-row>
+        
               <ion-col>
                   <img src="../../assets/imgs/2.jpg" alt="">
               </ion-col>
@@ -45,9 +40,7 @@
               </ion-col>
               <ion-col>
                   <img src="../../assets/imgs/1.jpg" alt="Image"> </ion-col>
-          </ion-row>
 
-          <ion-row>
               <ion-col>
                   <img src="../../assets/imgs/1.jpg" alt="Image">
               </ion-col>
@@ -57,8 +50,7 @@
               <ion-col>
                   <img src="../../assets/imgs/1.jpg" alt="Image">
               </ion-col>
-          </ion-row>
-          <ion-row>
+
               <ion-col>
                   <img src="../../assets/imgs/2.jpg" alt="">
               </ion-col>
@@ -67,9 +59,7 @@
               </ion-col>
               <ion-col>
                   <img src="../../assets/imgs/1.jpg" alt="Image"> </ion-col>
-          </ion-row>
 
-          <ion-row>
               <ion-col>
                   <img src="../../assets/imgs/1.jpg" alt="Image">
               </ion-col>
@@ -79,8 +69,7 @@
               <ion-col>
                   <img src="../../assets/imgs/1.jpg" alt="Image">
               </ion-col>
-          </ion-row>
-          <ion-row>
+
               <ion-col>
                   <img src="../../assets/imgs/2.jpg" alt="">
               </ion-col>
@@ -89,9 +78,7 @@
               </ion-col>
               <ion-col>
                   <img src="../../assets/imgs/1.jpg" alt="Image"> </ion-col>
-          </ion-row>
 
-          <ion-row>
               <ion-col>
                   <img src="../../assets/imgs/1.jpg" alt="Image">
               </ion-col>
@@ -101,8 +88,7 @@
               <ion-col>
                   <img src="../../assets/imgs/1.jpg" alt="Image">
               </ion-col>
-          </ion-row>
-          <ion-row>
+
               <ion-col>
                   <img src="../../assets/imgs/2.jpg" alt="">
               </ion-col>
@@ -111,9 +97,7 @@
               </ion-col>
               <ion-col>
                   <img src="../../assets/imgs/1.jpg" alt="Image"> </ion-col>
-          </ion-row>
 
-          <ion-row>
               <ion-col>
                   <img src="../../assets/imgs/1.jpg" alt="Image">
               </ion-col>
@@ -123,8 +107,7 @@
               <ion-col>
                   <img src="../../assets/imgs/1.jpg" alt="Image">
               </ion-col>
-          </ion-row>
-          <ion-row>
+
               <ion-col>
                   <img src="../../assets/imgs/2.jpg" alt="">
               </ion-col>
@@ -133,9 +116,7 @@
               </ion-col>
               <ion-col>
                   <img src="../../assets/imgs/1.jpg" alt="Image"> </ion-col>
-          </ion-row>
 
-          <ion-row>
               <ion-col>
                   <img src="../../assets/imgs/1.jpg" alt="Image">
               </ion-col>
@@ -145,8 +126,7 @@
               <ion-col>
                   <img src="../../assets/imgs/1.jpg" alt="Image">
               </ion-col>
-          </ion-row>
-          <ion-row>
+
               <ion-col>
                   <img src="../../assets/imgs/2.jpg" alt="">
               </ion-col>
@@ -160,9 +140,18 @@
       </ion-grid>
     
   </div>
-
-<button ion-button clear (click)="profile()">
-click Me!!!
-</button>
+  <ion-fab top right edge>
+        <button ion-fab mini><ion-icon name="add"></ion-icon></button>
+        <ion-fab-list>
+            <button ion-fab (click)="profile()">
+                <ion-icon name="person"></ion-icon>
+            </button>
+            <button ion-fab (click)="upload()">
+                <ion-icon name="add"></ion-icon>
+            </button>
+        </ion-fab-list>
+    </ion-fab>
+    <button ion-button clear>
+    </button>
 
 </ion-content>

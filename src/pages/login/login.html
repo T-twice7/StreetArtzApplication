@@ -1,9 +1,7 @@
+
 <ion-header>
 
 </ion-header>
-
-
-
 <ion-content>
   <ion-fab top left>
     <button ion-button clear color="light" menuToggle>
@@ -26,16 +24,20 @@
         <ion-list no-lines>
           <ion-item>
             <ion-label fixed>
-              <ion-icon ios="ios-person-outline" md="md-person" id="space"></ion-icon> Username</ion-label>
-            <ion-input type="text" [(ngModel)]="obj.email"></ion-input>
+
+              <ion-icon ios="ios-person-outline" md="md-person" id="space"></ion-icon></ion-label>
+            <ion-input type="text" value=""[(ngModel)]="obj.email"></ion-input>
+
           </ion-item>
 
           <ion-item>
             <ion-label fixed>
-              <ion-icon ios="ios-key-outline" md="md-key" id="space"></ion-icon> Password</ion-label>
+
+              <ion-icon ios="ios-key-outline" md="md-key" id="space"></ion-icon></ion-label>
+
             <ion-input type="password" [(ngModel)]="obj.password"></ion-input>
           </ion-item>
-          <p>Forgot password</p>
+          <p (click)="forgotpassword(obj)">Forgot password</p>
         </ion-list>
       </div>
       <div class="ctrl">
@@ -59,6 +61,7 @@
           <b id="instruct"> Sign up</b></p>
         </button>
   </div>
+
 
 
 </ion-content>

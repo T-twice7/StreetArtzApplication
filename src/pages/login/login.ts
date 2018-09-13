@@ -3,9 +3,16 @@ import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angu
 import { SignupPage } from '../signup/signup';
 import { StreetartzProvider } from '../../providers/streetartz/streetartz';
 import { MainPage } from '../main/main';
+
+
+
+
+
 import { obj } from '../../class';
+
 import { ModalController,ViewController } from 'ionic-angular';
 import { LoadingController } from 'ionic-angular';
+
 import { CategoryPage } from '../category/category';
 
 
@@ -29,30 +36,31 @@ declare var firebase;
 
 
 export class LoginPage {
+
   email:any;
   password:any;
   obj = {} as obj;
   errMsg;
   constructor(public alertCtrl: AlertController,public navCtrl: NavController, public navParams: NavParams,public modalCtrl: ModalController, public viewCtrl: ViewController,public art: StreetartzProvider,public loadingCtrl: LoadingController) {
+
   }
   ionViewDidLoad() {
     console.log('ionViewDidLoad LoginPage');
     
   }
-
-
   signup(){
     const modal = this.modalCtrl.create(SignupPage);
     modal.present();
   }
 
-  dismiss() {
-    this.viewCtrl.dismiss();
-  }
   login(obj:obj) {
     this.art.login(this.obj.email,this.obj.password ).then(()=>{
      this.presentLoading();
+
+     this.navCtrl.setRoot(MainPage)
+
      this.navCtrl.setRoot(CategoryPage);
+
     } , (error)=>{
       console.log(error.message);
       
@@ -70,11 +78,17 @@ export class LoginPage {
     const loader = this.loadingCtrl.create({
       content: "signing in....",
       duration: 3000
+     
     });
     loader.present();
   }
+forgotpassword(obj:obj){
+  this.art.forgotpassword(this.obj.email).then(()=>{
+    alert("Check your email")
+  } , (error)=>{
 
-
+  })
+}
 
 }
 
