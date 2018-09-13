@@ -6,7 +6,6 @@ page-category {
         background: rgb(239, 239, 239);
         animation: 1s bounceInDown;
     }
-
     .slant{
         width: 0px;
         height: 0px;
@@ -20,8 +19,6 @@ page-category {
         max-width:250px;
         max-height: 250px;
     }
-
-
     @media screen and (min-width: 0px) {
         @media screen and (max-width: 321px){
        
@@ -183,8 +180,6 @@ page-category {
                 margin-left: -120px;
                 background: #222;
             }
-
         }
-
     }
 }

@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { PortfolioPage } from '../portfolio/portfolio';
+import { MainPage } from '../main/main';
 
 /**
  * Generated class for the CategoryPage page.
@@ -21,6 +23,10 @@ export class CategoryPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad CategoryPage');
   }
-
-
+  nextpage(){
+    this.navCtrl.push(PortfolioPage);
+  }
+next(){
+  this.navCtrl.push(MainPage);
+}
 }

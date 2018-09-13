@@ -13,7 +13,7 @@ import { ProfilePage } from '../pages/profile/profile';
 import { GalleryPage } from '../pages/gallery/gallery';
 import { UploadImagePage } from '../pages/upload-image/upload-image';
 
-
+import firebase from 'firebase';
 
 
 @Component({
@@ -22,6 +22,7 @@ import { UploadImagePage } from '../pages/upload-image/upload-image';
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
+<<<<<<< HEAD
 
 
 
@@ -34,6 +35,9 @@ export class MyApp {
   rootPage: any = SplashPage;
 
 
+=======
+  rootPage: any = SplashPage;
+>>>>>>> 86325842c6fa535c8634561573cc23d8cb158c7e
 
   pages: Array<{title: string, component: any}>;
 
@@ -43,14 +47,20 @@ export class MyApp {
     // used for an example of ngFor and navigation
     this.pages = [
 
-   
-
       { title: 'Categories', component: CategoryPage},
       { title: 'Are you an artist?', component: LoginPage},
       { title: 'Gallery', component: GalleryPage},
 
-
     ];
+
+    firebase.initializeApp({
+      apiKey: "AIzaSyDXJsbuaNORuwbz2gdRBFi-kUQ1JDJKoMA",
+        authDomain: "street-artz-181f2.firebaseapp.com",
+        databaseURL: "https://street-artz-181f2.firebaseio.com",
+        projectId: "street-artz-181f2",
+        storageBucket: "street-artz-181f2.appspot.com",
+        messagingSenderId: "118526884863"
+    })
 
   }
 
@@ -68,4 +78,6 @@ export class MyApp {
     // we wouldn't want the back button to show in this scenario
     this.nav.setRoot(page.component);
   }
+
+
 }
