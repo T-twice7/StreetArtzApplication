@@ -22,7 +22,7 @@ import firebase from 'firebase';
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = SplashPage;
+  rootPage: any = UploadImagePage;
 
   pages: Array<{title: string, component: any}>;
 
