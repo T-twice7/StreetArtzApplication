@@ -5,7 +5,7 @@ import { obj } from '../../class';
 import { AlertController } from 'ionic-angular';
 import { LoadingController } from 'ionic-angular';
 import { ToastController } from 'ionic-angular';
-
+import { select } from '../../class';
 
 import firebase from 'firebase';
 
@@ -18,7 +18,10 @@ import firebase from 'firebase';
 @Injectable()
 export class StreetartzProvider {
   obj = {} as obj;
+  select = {} as select;
   arr = [];
+  category;
+  keys = [];
   constructor(public toastCtrl: ToastController, public alertCtrl: AlertController, public loadingCtrl: LoadingController) {
     console.log('Hello StreetartzProvider Provider');
 
@@ -140,7 +143,7 @@ export class StreetartzProvider {
       });
     })
   }
-  viewPic(){
+  viewPic() {
     let loading = this.loadingCtrl.create({
       spinner: 'bubbles',
       content: 'Please wait',
@@ -151,7 +154,6 @@ export class StreetartzProvider {
       var user = firebase.auth().currentUser
       firebase.database().ref("uploads/" + user.uid).on("value", (data: any) => {
         var a = data.val();
-        this.arr.push(a);
         if (a !== null) {
         }
         console.log(a);
@@ -171,14 +173,30 @@ export class StreetartzProvider {
       });
     })
   }
-  selectCategory(){
-  return new Promise((pass,fail)=>{
-    var user = firebase.auth().currentUser
-    firebase.database().ref("uploads/").on("value",(data:any)=>{
-      var name = data.val();
-      console.log(data);
+  selectCategory(select: select) {
+    return new Promise((pass, fail) => {
+      firebase.database().ref("uploads/").on('value', (data: any) => {
+        let uploads = data.val();
+        var keys: any = Object.keys(uploads);
+        for (var j = 0; j < keys.length; j++) {
+          firebase.database().ref("uploads/" + keys[j]).on('value', (data2: any) => {
+            let uploads2 = data2.val();
+            var keys2: any = Object.keys(uploads2);
+            for (var i = 0; i < keys2.length; i++) {
+              var k = keys2[i];
+              let objt = {
+                name: uploads2[k].name,
+                category: uploads2[k].category,
+                downloadurl: uploads2[k].downloadurl
+              }
+              this.arr.push(objt);
+
+            }
+          })
+          console.log(this.arr);
+        }
+      }), pass("okay");
     })
-  })
   }
 }
 
