@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { PortfolioPage } from '../portfolio/portfolio';
 import { MainPage } from '../main/main';
-
+import { StreetartzProvider } from '../../providers/streetartz/streetartz';
 /**
  * Generated class for the CategoryPage page.
  *
@@ -17,7 +17,7 @@ import { MainPage } from '../main/main';
 })
 export class CategoryPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,public art: StreetartzProvider) {
   }
 
   ionViewDidLoad() {
@@ -28,5 +28,9 @@ export class CategoryPage {
   }
 next(){
   this.navCtrl.push(MainPage);
+}
+
+typeOfArt(){
+  
 }
 }

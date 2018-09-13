@@ -1,14 +1,26 @@
 <ion-header #head color="dark">
 
     <ion-navbar color="dark">
-        <ion-buttons start>
+        <!-- <ion-buttons start>
             <button ion-button icon-only menuToggle>
                 <ion-icon name="menu"></ion-icon>
             </button>
         </ion-buttons>
 
 
-        <ion-title>My Gallery</ion-title>
+        <ion-title>My Gallery</ion-title> -->
+        <ion-grid>
+            <ion-row>
+                <ion-col col-1>
+                    <button ion-button icon-only menuToggle>
+                        <ion-icon name="menu"></ion-icon>
+                    </button>
+                </ion-col>
+                <ion-col>
+                    <ion-title>My Gallery</ion-title>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
     </ion-navbar>
 
 </ion-header>
@@ -30,7 +42,6 @@
                 <ion-col>
                     <img src="../../assets/imgs/2.jpg" alt="Image">
                 </ion-col>
-            </ion-row><ion-row>
    
                 <ion-col>
                     <img src="../../assets/pic.jpg" alt="">
@@ -40,7 +51,6 @@
                 </ion-col>
                 <ion-col>
                     <img src="../../assets/71a6051478643c6744d329164a4c8537.jpg" alt="Image"> </ion-col>
-                </ion-row><ion-row>
                 <ion-col>
                     <img src="../../assets/imgs/2.jpg" alt="Image">
                 </ion-col>
@@ -51,7 +61,6 @@
                 <ion-col>
                     <img src="../../assets/imgs/2.jpg" alt="Image">
                 </ion-col>
-       </ion-row><ion-row>
                 <ion-col>
                     <img src="../../assets/pic.jpg" alt="">
                 </ion-col>
@@ -60,7 +69,6 @@
                 </ion-col>
                 <ion-col>
                     <img src="../../assets/71a6051478643c6744d329164a4c8537.jpg" alt="Image"> </ion-col>
-                </ion-row><ion-row>
                 <ion-col>
                     <img src="../../assets/imgs/2.jpg" alt="Image">
                 </ion-col>
@@ -70,7 +78,6 @@
                 <ion-col>
                     <img src="../../assets/imgs/2.jpg" alt="Image">
                 </ion-col>
-            </ion-row><ion-row>
                 <ion-col>
                     <img src="../../assets/imgs/2.jpg" alt="">
                 </ion-col>
@@ -79,7 +86,6 @@
                 </ion-col>
                 <ion-col>
                     <img src="../../assets/imgs/2.jpg" alt="Image"> </ion-col>
-                </ion-row><ion-row>
                 <ion-col>
                     <img src="../../assets/71a6051478643c6744d329164a4c8537.jpg" alt="Image">
                 </ion-col>
@@ -89,7 +95,6 @@
                 <ion-col>
                     <img src="../../assets/pic.jpg" alt="Image">
                 </ion-col>
-            </ion-row><ion-row>
                 <ion-col>
                     <img src="../../assets/imgs/2.jpg" alt="">
                 </ion-col>
@@ -98,7 +103,6 @@
                 </ion-col>
                 <ion-col>
                     <img src="../../assets/imgs/2.jpg" alt="Image"> </ion-col>
-                </ion-row><ion-row>
                 <ion-col>
                     <img src="../../assets/71a6051478643c6744d329164a4c8537.jpg" alt="Image">
                 </ion-col>
@@ -108,7 +112,6 @@
                 <ion-col>
                     <img src="../../assets/71a6051478643c6744d329164a4c8537.jpg" alt="Image">
                 </ion-col>
-            </ion-row><ion-row>
                 <ion-col>
                     <img src="../../assets/imgs/2.jpg" alt="">
                 </ion-col>
@@ -117,7 +120,6 @@
                 </ion-col>
                 <ion-col>
                     <img src="../../assets/imgs/2.jpg" alt="Image"> </ion-col>
-                </ion-row><ion-row>
                 <ion-col>
                     <img src="../../assets/71a6051478643c6744d329164a4c8537.jpg" alt="Image">
                 </ion-col>
@@ -127,7 +129,6 @@
                 <ion-col>
                     <img src="../../assets/71a6051478643c6744d329164a4c8537.jpg" alt="Image">
                 </ion-col>
-            </ion-row><ion-row>
                 <ion-col>
                     <img src="../../assets/imgs/2.jpg" alt="">
                 </ion-col>
@@ -140,8 +141,8 @@
 
         </ion-grid>
     </div>
-    <ion-fab top right edge>
-        <button ion-fab mini>
+    <ion-fab bottom right>
+        <button ion-fab mini color="dark">
             <ion-icon name="add"></ion-icon>
         </button>
         <ion-fab-list>
@@ -153,7 +154,5 @@
             </button>
         </ion-fab-list>
     </ion-fab>
-    <button ion-button clear>
-    </button>
 
 </ion-content>

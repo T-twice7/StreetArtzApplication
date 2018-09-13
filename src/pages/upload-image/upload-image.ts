@@ -20,6 +20,7 @@ export class UploadImagePage {
   name;
   category;
   picDesc;
+  arr=[];
   constructor(public navCtrl: NavController, public navParams: NavParams,public art: StreetartzProvider) {
   }
   ionViewDidLoad() {

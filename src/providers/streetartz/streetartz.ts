@@ -151,6 +151,7 @@ export class StreetartzProvider {
       var user = firebase.auth().currentUser
       firebase.database().ref("uploads/" + user.uid).on("value", (data: any) => {
         var a = data.val();
+        this.arr.push(a);
         if (a !== null) {
         }
         console.log(a);
@@ -169,6 +170,15 @@ export class StreetartzProvider {
         console.log(Error.message);
       });
     })
+  }
+  selectCategory(){
+  return new Promise((pass,fail)=>{
+    var user = firebase.auth().currentUser
+    firebase.database().ref("uploads/").on("value",(data:any)=>{
+      var name = data.val();
+      console.log(data);
+    })
+  })
   }
 }
 
