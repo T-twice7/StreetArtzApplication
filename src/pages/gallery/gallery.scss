@@ -1,14 +1,9 @@
 page-gallery {
-    ion-toolbar{
-        height: 300px;
-    }
-
     text-align: center;
     .theBody{
         background: rgb(239, 239, 239);
         animation: 1s bounceInDown;
     }
-
     .slant{
         width: 0px;
         height: 0px;
@@ -22,13 +17,12 @@ page-gallery {
         max-width:250px;
         max-height: 250px;
     }
-
-
     @media screen and (min-width: 0px) {
         @media screen and (max-width: 321px){
        
             #scroll-content{
                 // background: red;
+                margin-top: -70px;
             }
             img{
                 height: 90px;
@@ -42,38 +36,14 @@ page-gallery {
                 margin-top: -105px;
                 margin-left: -70px;
                 background: #222;
-                position: absolute;
             }
         }
     } 
     @media screen and (min-width: 322px) {
-        @media screen and (max-width: 359px){
+        @media screen and (max-width: 360px){
             #scroll-content{
                 // background: red;
-                // margin-top: -70px;
-            }
-            img{
-                height: 90px;
-                width: 90px;
-                border: 2px solid white;
-            }
-            .rot{
-                width: 125vw;
-                height: 30vh;
-                transform: rotate(-20deg);
-                margin-top: -120px;
-                margin-left: -70px;
-                background: #222;
-                position: absolute;
-            }
-        }
-    }     
-    @media screen and (min-width: 361px) {
-        @media screen and (max-width: 414px){
-            @media screen and (max-height: 732px){
-            #scroll-content{
-                background:red;
-                // margin-top: -180px;
+                margin-top: -70px;
             }
             img{
                 height: 100px;
@@ -87,18 +57,39 @@ page-gallery {
                 margin-top: -120px;
                 margin-left: -70px;
                 background: #222;
-                position: absolute;
+            }
+        }
+    }     
+    @media screen and (min-width: 361px) {
+        @media screen and (max-width: 414px){
+            @media screen and (max-height: 732px){
+                           #scroll-content{
+                background: green;
+                margin-top: -80px;
+            }
+            img{
+                height: 120px;
+                width: 120px;
+                border: 2px solid white;
+            }
+            .rot{
+                width: 125vw;
+                height: 30vh;
+                transform: rotate(-20deg);
+                margin-top: -140px;
+                margin-left: -70px;
+                background: #222;
             }
             }
             @media screen and (min-height: 740px){
                 @media screen and (max-height: 813px){
                     #scroll-content{
-                        // background: rgb(186, 255, 186);
+                        background: rgb(186, 255, 186);
                         margin-top: -80px;
                     }
                     img{
-                        height: 100px;
-                        width: 100px;
+                        height: 120px;
+                        width: 120px;
                         border: 2px solid white;
                     }
                     .rot{
@@ -118,7 +109,7 @@ page-gallery {
             @media screen and (max-height: 739px){
             #scroll-content{
                 // background: rgb(255, 0, 234);
-                margin-top: -0px
+                margin-top: -80px
             }
             img{
                 height: 120px;
@@ -129,7 +120,7 @@ page-gallery {
                 width: 125vw;
                 height: 30vh;
                 transform: rotate(-20deg);
-                margin-top: -1k50px;
+                margin-top: -150px;
                 margin-left: -70px;
                 background: #222;
             }
@@ -139,9 +130,8 @@ page-gallery {
     @media screen and (min-width:770px){
         @media screen and (max-width:1025px){
             #scroll-content{
-                background: pink;
+                background: red;
                 margin-top: -130px;
-                border: 2px solid red;
             }
             img{
                 height: 250px;
@@ -149,7 +139,6 @@ page-gallery {
                 border: 2px solid white;
             }
             ion-grid{
-                margin-top: -80px;
                 width: 100%;
                 max-width: 830px;
             }
@@ -188,8 +177,6 @@ page-gallery {
                 margin-left: -120px;
                 background: #222;
             }
-
         }
-
     }
 }

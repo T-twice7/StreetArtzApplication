@@ -7,7 +7,7 @@ import { LoadingController } from 'ionic-angular';
 import { ToastController } from 'ionic-angular';
 // import arr  from '../../class';
 
-declare var firebase;
+import firebase from 'firebase';
 
 /*
   Generated class for the StreetartzProvider provider.
@@ -88,9 +88,9 @@ export class StreetartzProvider {
 
   profile(obj:obj){
     return new Promise((pass,fail)=>{
-      var userID = firebase.auth().currentUser;
+      let userID = firebase.auth().currentUser;
       firebase.database().ref("profiles/" + userID.uid).on('value',(data: any) => {
-        var username = data.val();
+        let username = data.val();
        this.arr.push(username);
        console.log(this.arr);
       });
@@ -132,11 +132,11 @@ return new Promise((accpt,rejc) =>{
 }
 storeToDB(name, category, picName){
 return new Promise((accpt,rejc) =>{
-  var storageRef = firebase.storage().ref(name);
+  let storageRef = firebase.storage().ref(name);
   storageRef.getDownloadURL().then(url => {
     console.log(url)
-    var user = firebase.auth().currentUser;
-    var link =  url;
+    let user = firebase.auth().currentUser;
+    let link =  url;
     firebase.database().ref('uploads/' + user.uid).push({
           downloadurl :link,
           name : picName,
@@ -150,6 +150,38 @@ return new Promise((accpt,rejc) =>{
   })
 }
 
+viewPic(){
 
+  let loading = this.loadingCtrl.create({
+    spinner: 'bubbles',
+    content: 'Please wait',
+    duration: 3000
+  });
+return new Promise((accpt,rejc) =>{
+  loading.present();
+  var user = firebase.auth().currentUser
+  firebase.database().ref("uploads/" + user.uid).on("value", (data: any) => {
+  var a = data.val();
+    if( a !== null){
+
+    }
+    console.log(a);
+  accpt(a);
+}, Error =>{
+  rejc(Error.message)
+})
+})
+}
+deletePicture(key:any){
+  return new Promise ((accpt,rejc) =>{
+  var user = firebase.auth().currentUser
+  firebase.database().ref("uploads/" + user.uid).child(key).remove().then(() => {
+
+  }, Error => {
+  rejc(Error.message);
+  console.log(Error.message);
+});
+})
+}
 }
 

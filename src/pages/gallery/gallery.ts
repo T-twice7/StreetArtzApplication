@@ -40,4 +40,5 @@ export class GalleryPage {
   dismiss() {
     this.viewCtrl.dismiss();
   }
+  
 }

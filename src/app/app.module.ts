@@ -5,6 +5,7 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { ListPage } from '../pages/list/list';
 
+import firebase from 'firebase';
 
 import { SplashPage } from '../pages/splash/splash';
 import { StatusBar } from '@ionic-native/status-bar';
