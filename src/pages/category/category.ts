@@ -21,8 +21,10 @@ export class CategoryPage {
 obj = {} as obj
 select = {} as select
 category;
-arr =[];
+arr2 =[];
   constructor(public navCtrl: NavController, public navParams: NavParams,public art: StreetartzProvider) {
+
+    console.log(this.category);
   }
 
   ionViewDidLoad() {
@@ -36,10 +38,12 @@ next(){
 }
 
 typeOfArt(){
-  this.art.selectCategory(this.select).then((data)=>{
-    console.log(data);
-  
-   
+  this.art.selectCategory(this.category).then((data)=>{
+    this.arr2.push(data)
+    console.log(this.arr2);
   })
+}
+test(){
+  alert(this.category);
 }
 }
