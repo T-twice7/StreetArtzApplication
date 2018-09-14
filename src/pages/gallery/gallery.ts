@@ -7,6 +7,7 @@ import arr from '../../class';
 import { ModalController,ViewController  } from 'ionic-angular';
 import { UploadImagePage } from '../upload-image/upload-image';
 import { LoadingController } from 'ionic-angular';
+import { ToastController } from 'ionic-angular';
 /**
  * Generated class for the GalleryPage page.
  *
@@ -24,7 +25,8 @@ export class GalleryPage {
   arr = [];
   uid:any;
   list=[];
-  constructor(public navCtrl: NavController, public navParams: NavParams, public art: StreetartzProvider,public modalCtrl: ModalController,public viewCtrl: ViewController,public loadingCtrl: LoadingController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public art: StreetartzProvider,public modalCtrl: ModalController,public viewCtrl: ViewController,public loadingCtrl: LoadingController,public toastCtrl: ToastController) {
+    this.retreivePics();
   }
 
   ionViewDidLoad() {
@@ -47,9 +49,7 @@ export class GalleryPage {
       this.uid = data
     })
   }
- 
- 
- 
+
   retreivePics(){
     this.getUid();
     this.art.viewPicGallery().then(data =>{
@@ -70,11 +70,29 @@ export class GalleryPage {
               }
               this.list.push(obj);
             }
- 
           }
           loader.dismiss();
        }, Error =>{
         console.log(Error)
+    });
+  }
+  remove(key){
+    var loader = this.loadingCtrl.create({
+      content: "please wait...",
+      duration: 3000
+    });
+ 
+    this.art.deletePicture(key).then(authData => {
+      loader.dismiss();
+      this.list = undefined;
+    }, err =>{
+      loader.dismiss();
+      let toast = this.toastCtrl.create({
+        message: err,
+        duration: 300,
+        position: 'top'
+      });
+      toast.present();
     });
   }
 }

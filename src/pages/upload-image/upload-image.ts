@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams,ViewController } from 'ionic-angular';
 import { MainPage } from '../main/main';
 import { StreetartzProvider } from '../../providers/streetartz/streetartz';
 import { GalleryPage } from '../gallery/gallery';
@@ -21,16 +21,16 @@ export class UploadImagePage {
   category;
   picDesc;
   arr=[];
-  constructor(public navCtrl: NavController, public navParams: NavParams,public art: StreetartzProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,public art: StreetartzProvider,public view :ViewController) {
   }
   ionViewDidLoad() {
     console.log('ionViewDidLoad UploadModalPage');
   }
-  viewImage(){
-    this.art.viewPic().then((data)=>{
-      console.log(data);
-    })
-  }
+  // viewImage(){
+  //   this.art.viewPic().then((data)=>{
+  //     console.log(data);
+  //   })
+  // }
  
   insertvid(event:any){
     if (event.target.files && event.target.files[0]){
@@ -47,7 +47,8 @@ export class UploadImagePage {
       console.log(data);
        this.art.storeToDB(data, this.category, this.name).then(() =>{
          console.log('added to db');
-        //  this.navCtrl.setRoot(GalleryPage);
+         this.navCtrl.push(GalleryPage);
+        // this.view.dismiss();
        },
       Error =>{
         console.log(Error)
