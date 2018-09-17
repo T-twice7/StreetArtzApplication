@@ -8,30 +8,27 @@ page-profile {
     font-weight: bolder;
 }
 #icon{
-    color: rgb(179, 79, 32);
+    color: white;
     font-size:6vh;
 }
 #icon2{
     color: white;
 }
 img{
-    border-left: 7px inset black;
-    border-right: 2px outset white;
+    border-left: 7px inset white;
+    border-right: 2px outset black;
     border-radius: 100%;
     box-shadow: 0 0 5px black;
     background-image: url('../../assets/person-icon.jpg');
     background-size: cover;
     height: 55vw;
-    
+
     width: 55vw;
 }
 #head{
     color: white;
 }
-// #pic{
-//     background-image: url('../../assets/imgs/person.jpg');
-//     background-size: cover;
-// }
+
 .list{
     margin-top: 10%;
     color: white;
@@ -43,4 +40,5 @@ img{
     font-size: 250%;
     font-weight: bolder;
 }
+
 }
