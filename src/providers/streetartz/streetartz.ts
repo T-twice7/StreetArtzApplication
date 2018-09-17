@@ -101,17 +101,6 @@ export class StreetartzProvider {
     })
 
   }
-<<<<<<< HEAD
-forgotpassword(email){
-  return new Promise((resolve, reject)=>{
-    firebase.auth().sendPasswordResetEmail(email) ;
-    resolve();
- })
- }
-
-
-uploadPic(pic,name){
-=======
   forgotpassword(email) {
     return new Promise((resolve, reject) => {
       firebase.auth().sendPasswordResetEmail(email);
@@ -124,7 +113,6 @@ uploadPic(pic,name){
       content: 'Please wait',
       duration: 3000
     });
->>>>>>> 47bff0a02cd62a82b9f6bd9e4eaa387ee0210f9e
 
     const toast = this.toastCtrl.create({
       message: 'Ur image has been added!',
