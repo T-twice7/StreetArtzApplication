@@ -23,20 +23,16 @@ export class ProfilePage implements OnInit {
   constructor(public viewCtrl: ViewController,public navCtrl: NavController,public modalCtrl: ModalController, public navParams: NavParams, public art: StreetartzProvider) {
   }
 
-  // ionViewDidLoad() {
-  //   console.log('ionViewDidLoad ProfilePage');
+  ionViewDidLoad() {
+    console.log('ionViewDidLoad ProfilePage');
 
-  // }
+  }
+
   ngOnInit() {
     this.obj = this.navParams.get("obj");
     console.log(this.obj);
   }
   next(){
     this.navCtrl.push(GalleryPage);
-    // this.viewCtrl.dismiss();
   }
-
-  // dismiss() {
-  //   this.viewCtrl.dismiss();
-  // }
 }

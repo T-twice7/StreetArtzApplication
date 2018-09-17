@@ -1,25 +1,37 @@
 page-profile {
     .home{
-        background: linear-gradient(#0000003b, #d4caca)
+        background: linear-gradient(#000000, #d4caca)
     }
 .size{
     font-size:5vh;
     color: white;
     font-weight: bolder;
 }
+#icon{
+    color: rgb(179, 79, 32);
+    font-size:6vh;
+}
+#icon2{
+    color: white;
+}
 img{
-    border: 2px inset black;
+    border-left: 7px inset black;
+    border-right: 2px outset white;
     border-radius: 100%;
-    box-shadow: 0 0 5px white;
-    background-image: url('../../assets/download.png');
+    box-shadow: 0 0 5px black;
+    background-image: url('../../assets/person-icon.jpg');
     background-size: cover;
     height: 55vw;
+    
     width: 55vw;
 }
 #head{
     color: white;
 }
-// #menu{}
+// #pic{
+//     background-image: url('../../assets/imgs/person.jpg');
+//     background-size: cover;
+// }
 .list{
     margin-top: 10%;
     color: white;
@@ -28,7 +40,7 @@ img{
     font-family: 'Times New Roman', Times, serif;
 }
 #name{
-    font-size: 150%;
+    font-size: 250%;
     font-weight: bolder;
 }
 }
