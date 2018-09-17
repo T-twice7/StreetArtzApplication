@@ -7,3 +7,9 @@ confirmPassword:string;
 }
 export default arr;
 var arr = new Array();
+
+export interface select{
+    category:string;
+    name:string;
+    url;
+}

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams,ViewController } from 'ionic-angular';
 import { MainPage } from '../main/main';
 import { StreetartzProvider } from '../../providers/streetartz/streetartz';
 import { GalleryPage } from '../gallery/gallery';
@@ -20,32 +20,35 @@ export class UploadImagePage {
   name;
   category;
   picDesc;
-  constructor(public navCtrl: NavController, public navParams: NavParams,public firebaseService: StreetartzProvider) {
+  arr=[];
+  constructor(public navCtrl: NavController, public navParams: NavParams,public art: StreetartzProvider,public view :ViewController) {
   }
- 
   ionViewDidLoad() {
     console.log('ionViewDidLoad UploadModalPage');
   }
+  // viewImage(){
+  //   this.art.viewPic().then((data)=>{
+  //     console.log(data);
+  //   })
+  // }
  
   insertvid(event:any){
- 
     if (event.target.files && event.target.files[0]){
       let reader = new FileReader();
- 
       reader.onload = (event:any) =>{
         this.url = event.target.result;
       }
       reader.readAsDataURL(event.target.files[0]);
- 
+      console.log(reader.onload);
     }
   }
- 
   uploadPicture(){
-    this.firebaseService.uploadPic(this.url,this.name).then(data =>{
+    this.art.uploadPic(this.url,this.name).then(data =>{
       console.log(data);
-       this.firebaseService.storeToDB(data, this.category, this.name).then(() =>{
+       this.art.storeToDB(data, this.category, this.name).then(() =>{
          console.log('added to db');
-         this.navCtrl.setRoot(GalleryPage);
+         this.navCtrl.push(GalleryPage);
+        // this.view.dismiss();
        },
       Error =>{
         console.log(Error)
@@ -53,5 +56,6 @@ export class UploadImagePage {
     }, Error =>{
       console.log(Error)
     })
-}
+  }
+ 
 }

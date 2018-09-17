@@ -1,14 +1,17 @@
 <ion-header #head color="dark">
-
     <ion-navbar color="dark">
-        <ion-buttons start>
-            <button ion-button icon-only menuToggle>
-                <ion-icon name="menu"></ion-icon>
-            </button>
-        </ion-buttons>
-
-
-        <ion-title>My Gallery</ion-title>
+        <ion-grid>
+            <ion-row>
+                <ion-col col-1>
+                    <button ion-button icon-only menuToggle>
+                        <ion-icon name="menu"></ion-icon>
+                    </button>
+                </ion-col>
+                <ion-col>
+                    <ion-title>My Gallery</ion-title>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
     </ion-navbar>
 
 </ion-header>
@@ -16,133 +19,23 @@
 
 <ion-content autohide [header]="head">
     <div class="rot">
-      </div>
-  <div id="scroll-content">
-
-      <ion-grid no-padding>
-          <!-- insert the for loop on the [ion-col] tag  -->
-          <ion-row>
-              <ion-col >
-                  <img src="../../assets/imgs/1.jpg" alt="Image">
-              </ion-col>
-              <ion-col>
-                  <img src="../../assets/imgs/2.jpg" alt="">
-              </ion-col>
-              <ion-col>
-                  <img src="../../assets/imgs/1.jpg" alt="Image">
-              </ion-col>
-        
-              <ion-col>
-                  <img src="../../assets/imgs/2.jpg" alt="">
-              </ion-col>
-              <ion-col>
-                  <img src="../../assets/imgs/2.jpg" alt="">
-              </ion-col>
-              <ion-col>
-                  <img src="../../assets/imgs/1.jpg" alt="Image"> </ion-col>
-
-              <ion-col>
-                  <img src="../../assets/imgs/1.jpg" alt="Image">
-              </ion-col>
-              <ion-col>
-                  <img src="../../assets/imgs/2.jpg" alt="">
-              </ion-col>
-              <ion-col>
-                  <img src="../../assets/imgs/1.jpg" alt="Image">
-              </ion-col>
-
-              <ion-col>
-                  <img src="../../assets/imgs/2.jpg" alt="">
-              </ion-col>
-              <ion-col>
-                  <img src="../../assets/imgs/2.jpg" alt="">
-              </ion-col>
-              <ion-col>
-                  <img src="../../assets/imgs/1.jpg" alt="Image"> </ion-col>
-
-              <ion-col>
-                  <img src="../../assets/imgs/1.jpg" alt="Image">
-              </ion-col>
-              <ion-col>
-                  <img src="../../assets/imgs/2.jpg" alt="">
-              </ion-col>
-              <ion-col>
-                  <img src="../../assets/imgs/1.jpg" alt="Image">
-              </ion-col>
-
-              <ion-col>
-                  <img src="../../assets/imgs/2.jpg" alt="">
-              </ion-col>
-              <ion-col>
-                  <img src="../../assets/imgs/2.jpg" alt="">
-              </ion-col>
-              <ion-col>
-                  <img src="../../assets/imgs/1.jpg" alt="Image"> </ion-col>
-
-              <ion-col>
-                  <img src="../../assets/imgs/1.jpg" alt="Image">
-              </ion-col>
-              <ion-col>
-                  <img src="../../assets/imgs/2.jpg" alt="">
-              </ion-col>
-              <ion-col>
-                  <img src="../../assets/imgs/1.jpg" alt="Image">
-              </ion-col>
-
-              <ion-col>
-                  <img src="../../assets/imgs/2.jpg" alt="">
-              </ion-col>
-              <ion-col>
-                  <img src="../../assets/imgs/2.jpg" alt="">
-              </ion-col>
-              <ion-col>
-                  <img src="../../assets/imgs/1.jpg" alt="Image"> </ion-col>
-
-              <ion-col>
-                  <img src="../../assets/imgs/1.jpg" alt="Image">
-              </ion-col>
-              <ion-col>
-                  <img src="../../assets/imgs/2.jpg" alt="">
-              </ion-col>
-              <ion-col>
-                  <img src="../../assets/imgs/1.jpg" alt="Image">
-              </ion-col>
-
-              <ion-col>
-                  <img src="../../assets/imgs/2.jpg" alt="">
-              </ion-col>
-              <ion-col>
-                  <img src="../../assets/imgs/2.jpg" alt="">
-              </ion-col>
-              <ion-col>
-                  <img src="../../assets/imgs/1.jpg" alt="Image"> </ion-col>
-
-              <ion-col>
-                  <img src="../../assets/imgs/1.jpg" alt="Image">
-              </ion-col>
-              <ion-col>
-                  <img src="../../assets/imgs/2.jpg" alt="">
-              </ion-col>
-              <ion-col>
-                  <img src="../../assets/imgs/1.jpg" alt="Image">
-              </ion-col>
-
-              <ion-col>
-                  <img src="../../assets/imgs/2.jpg" alt="">
-              </ion-col>
-              <ion-col>
-                  <img src="../../assets/imgs/2.jpg" alt="">
-              </ion-col>
-              <ion-col>
-                  <img src="../../assets/imgs/1.jpg" alt="Image"> </ion-col>
-          </ion-row>
-
-      </ion-grid>
-    
-  </div>
-  <ion-fab top right edge>
-        <button ion-fab mini><ion-icon name="add"></ion-icon></button>
-        <ion-fab-list>
+    </div>
+    <div id="scroll-content">
+        <ion-list>
+            <ion-item *ngFor="let a of list">
+              <ion-thumbnail item-start>
+                <img [src]="a.downloadurl">
+              </ion-thumbnail>
+              <h2>{{a.name}}</h2>
+              <button ion-button color="danger" clear item-end (click)="remove(a.key)">remove</button>
+            </ion-item>
+          </ion-list>
+    </div>
+    <ion-fab bottom right>
+        <button ion-fab mini color="dark">
+            <ion-icon name="add"></ion-icon>
+        </button>
+        <ion-fab-list side="left">
             <button ion-fab (click)="profile()">
                 <ion-icon name="person"></ion-icon>
             </button>
@@ -151,7 +44,5 @@
             </button>
         </ion-fab-list>
     </ion-fab>
-    <button ion-button clear>
-    </button>
 
 </ion-content>
